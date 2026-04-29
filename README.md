@@ -81,5 +81,5 @@ This project is built purely for **educational and portfolio purposes**. It is n
 
 ## 🙋‍♂️ Author
 
-**Abhinav Shahi**  
+**Abhinav Pratap Shahi**  
 [GitHub](https://github.com/abhinavshahi27)
