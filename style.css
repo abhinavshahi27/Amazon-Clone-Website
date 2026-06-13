@@ -4,6 +4,15 @@
     border: border-box;
 }
 
+.demo-disclaimer{
+    background-color: #232f3e;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 10px 16px;
+}
+
 .navbar{
     height: 60px;
     background-color: #0f1111;
