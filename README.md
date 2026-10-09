@@ -1,6 +1,6 @@
-# Amazon Clone Website 🛒
+# StoreFront 🛒
 
-A responsive front-end clone of Amazon.com, built with pure HTML and CSS — no frameworks, no JavaScript.
+A responsive e-commerce homepage UI, built with pure HTML and CSS — no frameworks, no JavaScript.
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
@@ -10,29 +10,34 @@ A responsive front-end clone of Amazon.com, built with pure HTML and CSS — no 
 
 ## 📸 Overview
 
-This project replicates the Amazon homepage UI, including the full navigation bar, search bar, hero section, product category grid, and a multi-column footer — all faithfully recreated using semantic HTML and custom CSS.
+StoreFront is a fictional online shop built as a front-end layout exercise. It implements the patterns
+common to large retail homepages — a dense multi-section navigation bar, a search bar with a category
+selector, a hero banner, a responsive product-category grid, and a multi-column footer — using semantic
+HTML and hand-written CSS.
+
+It is a **static design demo**: nothing is for sale, no links or forms are wired up, and the page does
+not collect, store, or transmit any data.
 
 ---
 
 ## ✨ Features
 
-- **Navigation Bar** — Amazon-style header with logo, delivery location, search bar with category dropdown, language selector, sign-in, returns & orders, and cart icon
+- **Navigation Bar** — Header with wordmark, delivery location, search bar with category dropdown, language selector, sign-in, returns & orders, and cart icon
 - **Secondary Panel** — "All" menu with links to Today's Deals, Customer Service, Registry, Gift Cards, and Sell
-- **Hero Section** — Banner with a redirect prompt to Amazon India
-- **Product Category Grid** — 8 product category cards (Health & Personal Care, Clothes, Furniture, Smartphones, Gaming Accessories, Pet Care, Toys, Fashion) each with an image and "Shop now" link
-- **Footer** — Full four-column footer (Get to Know Us, Make Money with Us, Amazon Payment Products, Let Us Help You) plus copyright and legal links
-- **Font Awesome Icons** — Used throughout for location pin, search, flag, and cart icons
-- **Responsive Design** — Adapts across different screen sizes
+- **Hero Section** — Full-width banner with an overlaid message strip
+- **Product Category Grid** — 8 category cards (Health & Personal Care, Clothes, Furniture, Smartphones, Gaming Accessories, Pet Care, Toys, Fashion) each with an image and "Shop now" link
+- **Footer** — Four-column footer (Get to Know Us, Make Money with Us, Payment Options, Let Us Help You) plus copyright and legal links
+- **Font Awesome Icons** — Used throughout for the logo, location pin, search, flag, and cart
+- **Responsive Design** — Flexbox layout that adapts across screen sizes
 
 ---
 
 ## 🗂️ Project Structure
 
 ```
-Amazon-Clone-Website/
+StoreFront/
 ├── index.html          # Main HTML structure
 ├── style.css           # All custom styles
-├── amazon_logo.png     # Amazon logo asset
 ├── hero_image.jpg      # Hero section background
 ├── box1_image.jpg      # Health & Personal Care
 ├── box2_image.jpg      # Clothes
@@ -75,7 +80,8 @@ Or simply double-click `index.html` to open it in your default browser.
 
 ## 📌 Note
 
-This project is built purely for **educational and portfolio purposes**. It is not affiliated with or endorsed by Amazon.com, Inc. All Amazon branding, logos, and assets belong to their respective owners.
+"StoreFront" is a fictional brand invented for this project. The page is built purely for **educational
+and portfolio purposes**, is not a real shop, and is not affiliated with or endorsed by any retailer.
 
 ---
 
