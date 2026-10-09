@@ -23,6 +23,25 @@ collect, store or transmit any data.
 
 ## ✨ Features
 
+**Pages**
+- **Home** — hero, store promises, department grid and a trending strip
+- **Department pages** — one per category via `category.html?c=<slug>`, so every
+  department has its own shareable, bookmarkable URL with no build step
+- Unknown slugs fall through to a proper "department not found" page
+
+**Cart**
+- Persisted to `localStorage`, so it survives navigating between pages and reloads
+- Slide-in drawer with line items, quantity steppers, per-line and running totals
+- Remove, empty-cart, and an empty state; badge count syncs on every page
+- Stays in sync across browser tabs via the `storage` event
+
+**Catalogue**
+- 96 products across 8 departments in `js/data.js`
+- Per-department sorting (featured, price, rating, name) and an on-sale filter
+- Header search filters departments on the home page and products on a department page
+- Product art is generated from CSS gradients — a per-product hue and one of six
+  backdrop patterns — so no placeholder photography is needed
+
 **Layout & design**
 - Custom design system driven by CSS custom properties — one token block controls the whole palette
 - **Light and dark themes**, following the OS by default with a manual toggle that remembers your choice
@@ -32,21 +51,16 @@ collect, store or transmit any data.
 **Responsive**
 - Mobile-first grids using `auto-fill`/`minmax()` plus explicit breakpoints at 940px, 680px and 420px
 - Below 940px the primary nav becomes a slide-in drawer with a scrim, `Escape` to close, and focus handling
-- Below 680px the search bar reflows onto its own row; below 420px the grids collapse to a single column
+- Below 680px the search bar reflows onto its own row and the cart drawer goes full width
 - Verified with no horizontal overflow from 360px up
 
-**Interaction** (`script.js`, ~290 lines, zero dependencies)
-- Live search that filters the department grid as you type, with a result count and empty state
-- Add-to-cart with a badge counter, bump animation and toast feedback
-- Sticky-header shadow and a back-to-top button, both driven by one `requestAnimationFrame`-throttled scroll handler
-- Scroll-reveal animations via `IntersectionObserver`
-
 **Accessibility & robustness**
-- Skip link, visible focus rings, ARIA labels on icon-only controls, and `aria-live` for search results
+- Skip link, visible focus rings, ARIA labels on icon-only controls, and `aria-live` for result counts
+- Focus moves into drawers on open and returns to the trigger on close
 - Honours `prefers-reduced-motion` — all animation is disabled, not just shortened
 - Progressive enhancement: the reveal animation is scoped behind a `js` class, so **with JavaScript
   disabled the page still renders completely**
-- Print stylesheet that drops the chrome and keeps the content
+- Every `localStorage` read and write is wrapped, so private mode and blocked storage degrade quietly
 
 ---
 
@@ -54,22 +68,24 @@ collect, store or transmit any data.
 
 ```
 StoreFront/
-├── index.html          # Markup + inline SVG icon sprite
+├── index.html          # Home page
+├── category.html       # Department page, driven by ?c=<slug>
 ├── style.css           # Design tokens, components, responsive rules
-├── script.js           # Theme, drawer, search, cart, scroll behaviour
+├── js/
+│   ├── data.js         # Product catalogue (96 products, 8 departments)
+│   ├── store.js        # Cart state + localStorage persistence
+│   ├── ui.js           # Shared: theme, drawers, cart, toast, product cards
+│   ├── home.js         # Home page: department search
+│   └── category.js     # Department page: render, sort, filter
 └── assets/
     ├── logo.svg        # Brand mark (also used as the favicon)
     ├── favicon.svg
     ├── hero-gaming.jpg
-    ├── health-personal-care.jpg
-    ├── clothing.jpg
-    ├── furniture.jpg
-    ├── smartphones.jpg
-    ├── gaming.jpg
-    ├── pet-care.jpg
-    ├── toys.jpg
-    └── fashion.jpg
+    └── *.jpg           # One photograph per department
 ```
+
+Both pages share the same header, footer and inline SVG icon sprite, and load the
+same four scripts in order: `data` → `store` → `ui` → page script.
 
 ---
 
@@ -99,7 +115,7 @@ Then visit <http://localhost:8000>.
 
 - **HTML5** — semantic structure, inline SVG sprite
 - **CSS3** — custom properties, Grid, Flexbox, `clamp()`, container-free responsive design
-- **JavaScript (ES5-compatible)** — no framework, no bundler, no polyfills
+- **JavaScript (ES5-compatible)** — no framework, no bundler, no polyfills; `localStorage` for cart and theme
 - **Google Fonts** — Plus Jakarta Sans (headings) and Inter (body)
 
 ---
