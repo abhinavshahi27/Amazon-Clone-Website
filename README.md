@@ -1,34 +1,52 @@
-# StoreFront 🛒
+# StoreFront 🛍️
 
-A responsive e-commerce homepage UI, built with pure HTML and CSS — no frameworks, no JavaScript.
+A responsive e-commerce storefront UI, hand-built with semantic HTML, modern CSS and vanilla
+JavaScript — no frameworks, no build step, no dependencies.
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
-![Font Awesome](https://img.shields.io/badge/Font_Awesome-528DD7?style=flat&logo=fontawesome&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
 ---
 
 ## 📸 Overview
 
-StoreFront is a fictional online shop built as a front-end layout exercise. It implements the patterns
-common to large retail homepages — a dense multi-section navigation bar, a search bar with a category
-selector, a hero banner, a responsive product-category grid, and a multi-column footer — using semantic
-HTML and hand-written CSS.
+StoreFront is a fictional shop built as a front-end portfolio project. It covers the patterns a
+real storefront needs — a sticky header with live search, a hero, a filterable department grid,
+product cards with an add-to-cart flow, and a layered footer — while staying a single static page
+that anyone can open straight from disk.
 
-It is a **static design demo**: nothing is for sale, no links or forms are wired up, and the page does
-not collect, store, or transmit any data.
+It is a **design demo**: nothing is for sale, no form submits anywhere, and the page does not
+collect, store or transmit any data.
 
 ---
 
 ## ✨ Features
 
-- **Navigation Bar** — Header with wordmark, delivery location, search bar with category dropdown, language selector, sign-in, returns & orders, and cart icon
-- **Secondary Panel** — "All" menu with links to Today's Deals, Customer Service, Registry, Gift Cards, and Sell
-- **Hero Section** — Full-width banner with an overlaid message strip
-- **Product Category Grid** — 8 category cards (Health & Personal Care, Clothes, Furniture, Smartphones, Gaming Accessories, Pet Care, Toys, Fashion) each with an image and "Shop now" link
-- **Footer** — Four-column footer (Get to Know Us, Make Money with Us, Payment Options, Let Us Help You) plus copyright and legal links
-- **Font Awesome Icons** — Used throughout for the logo, location pin, search, flag, and cart
-- **Responsive Design** — Flexbox layout that adapts across screen sizes
+**Layout & design**
+- Custom design system driven by CSS custom properties — one token block controls the whole palette
+- **Light and dark themes**, following the OS by default with a manual toggle that remembers your choice
+- Fluid type and spacing via `clamp()`, so headings scale smoothly instead of stepping between breakpoints
+- Gradient brand treatment, custom SVG logo mark, and an animated morphing blob behind the hero
+
+**Responsive**
+- Mobile-first grids using `auto-fill`/`minmax()` plus explicit breakpoints at 940px, 680px and 420px
+- Below 940px the primary nav becomes a slide-in drawer with a scrim, `Escape` to close, and focus handling
+- Below 680px the search bar reflows onto its own row; below 420px the grids collapse to a single column
+- Verified with no horizontal overflow from 360px up
+
+**Interaction** (`script.js`, ~290 lines, zero dependencies)
+- Live search that filters the department grid as you type, with a result count and empty state
+- Add-to-cart with a badge counter, bump animation and toast feedback
+- Sticky-header shadow and a back-to-top button, both driven by one `requestAnimationFrame`-throttled scroll handler
+- Scroll-reveal animations via `IntersectionObserver`
+
+**Accessibility & robustness**
+- Skip link, visible focus rings, ARIA labels on icon-only controls, and `aria-live` for search results
+- Honours `prefers-reduced-motion` — all animation is disabled, not just shortened
+- Progressive enhancement: the reveal animation is scoped behind a `js` class, so **with JavaScript
+  disabled the page still renders completely**
+- Print stylesheet that drops the chrome and keeps the content
 
 ---
 
@@ -36,52 +54,61 @@ not collect, store, or transmit any data.
 
 ```
 StoreFront/
-├── index.html          # Main HTML structure
-├── style.css           # All custom styles
-├── hero_image.jpg      # Hero section background
-├── box1_image.jpg      # Health & Personal Care
-├── box2_image.jpg      # Clothes
-├── box3_image.jpg      # Furniture
-├── box4_image.jpg      # Smartphones
-├── box5_image.jpg      # Gaming Accessories
-├── box6_image.jpg      # Pet Care
-├── box7_image.jpg      # Toys
-└── box8_image.jpg      # Fashion
+├── index.html          # Markup + inline SVG icon sprite
+├── style.css           # Design tokens, components, responsive rules
+├── script.js           # Theme, drawer, search, cart, scroll behaviour
+└── assets/
+    ├── logo.svg        # Brand mark (also used as the favicon)
+    ├── favicon.svg
+    ├── hero-gaming.jpg
+    ├── health-personal-care.jpg
+    ├── clothing.jpg
+    ├── furniture.jpg
+    ├── smartphones.jpg
+    ├── gaming.jpg
+    ├── pet-care.jpg
+    ├── toys.jpg
+    └── fashion.jpg
 ```
 
 ---
 
 ## 🚀 Getting Started
 
-No build tools or dependencies required — just open and run.
+No build tools or dependencies required.
 
 **1. Clone the repository**
 ```bash
 git clone https://github.com/abhinavshahi27/Amazon-Clone-Website.git
-```
-
-**2. Open in your browser**
-```bash
 cd Amazon-Clone-Website
-open index.html
 ```
 
-Or simply double-click `index.html` to open it in your default browser.
+**2. Serve it**
+
+Opening `index.html` directly works, but a local server is closer to production:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then visit <http://localhost:8000>.
 
 ---
 
 ## 🛠️ Built With
 
-- **HTML5** — Semantic page structure
-- **CSS3** — Flexbox-based layout and custom styling
-- **Font Awesome 6** — Icons via CDN
+- **HTML5** — semantic structure, inline SVG sprite
+- **CSS3** — custom properties, Grid, Flexbox, `clamp()`, container-free responsive design
+- **JavaScript (ES5-compatible)** — no framework, no bundler, no polyfills
+- **Google Fonts** — Plus Jakarta Sans (headings) and Inter (body)
 
 ---
 
 ## 📌 Note
 
-"StoreFront" is a fictional brand invented for this project. The page is built purely for **educational
-and portfolio purposes**, is not a real shop, and is not affiliated with or endorsed by any retailer.
+"StoreFront" is a fictional brand invented for this project. It is built purely for **educational
+and portfolio purposes**, is not a real shop, and is not affiliated with or endorsed by any
+retailer. All product photography is generic stock imagery used as placeholder content.
 
 ---
 
