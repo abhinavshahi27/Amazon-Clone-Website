@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#7c5cff">
+    <meta name="description" content="Browse a department at StoreFront, a fictional front-end demo shop.">
+    <title>Department — StoreFront</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- set before first paint so scroll-reveal only hides content when JS can show it again -->
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2.2l2.2 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.55L20.5 8H6"/><circle cx="10" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.1 5.1l1.4 1.4M17.5 17.5l1.4 1.4M18.9 5.1l-1.4 1.4M6.5 17.5l-1.4 1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2z"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V6M6 12l6-6 6 6"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 7h11v9H2zM13 10h4.5l3.5 3.2V16h-8"/><circle cx="6.5" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 2.8v5.4c0 4.3-2.9 7.7-7 9.3-4.1-1.6-7-5-7-9.3V5.8z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v4.5h-4.5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 14.5a2.5 2.5 0 0 1-2.5 2.5H9l-4 3v-3H6a2.5 2.5 0 0 1-2.5-2.5v-8A2.5 2.5 0 0 1 6 4h11.5A2.5 2.5 0 0 1 20 6.5z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M12 5.5 18.5 12 12 18.5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1.1 5.9-5.3-2.9-5.3 2.9 1.1-5.9L3.5 9.7l5.9-.8z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="g-health" viewBox="0 0 24 24"><path d="M12 3.2s6.2 6.4 6.2 10.5A6.2 6.2 0 1 1 5.8 13.7C5.8 9.6 12 3.2 12 3.2z"/></symbol>
+    <symbol id="g-clothing" viewBox="0 0 24 24"><path d="M8.6 3.6 5 5.6 3.3 9l2.6 1.4L5.7 20h12.6l-.2-9.6L20.7 9 19 5.6l-3.6-2a3.4 3.4 0 0 1-6.8 0z"/></symbol>
+    <symbol id="g-furniture" viewBox="0 0 24 24"><path d="M9 3.8h6l3.2 6.4H5.8z"/><path d="M12 10.2V19"/><path d="M8.4 19.8h7.2"/></symbol>
+    <symbol id="g-phone" viewBox="0 0 24 24"><rect x="6.2" y="2.8" width="11.6" height="18.4" rx="2.2"/><path d="M10.4 18.4h3.2"/></symbol>
+    <symbol id="g-gaming" viewBox="0 0 24 24"><path d="M8 8h8a5 5 0 0 1 5 5v1.4a2.5 2.5 0 0 1-4.6 1.4L15 14H9l-1.4 1.8A2.5 2.5 0 0 1 3 14.4V13a5 5 0 0 1 5-5z"/><path d="M7 11v2M6 12h2"/><circle cx="16" cy="11.6" r=".9"/><circle cx="17.6" cy="13.4" r=".9"/></symbol>
+    <symbol id="g-pet" viewBox="0 0 24 24"><ellipse cx="7.4" cy="9.6" rx="1.7" ry="2.2"/><ellipse cx="10.8" cy="7.6" rx="1.7" ry="2.4"/><ellipse cx="14.4" cy="7.6" rx="1.7" ry="2.4"/><ellipse cx="17.6" cy="9.6" rx="1.7" ry="2.2"/><path d="M12.4 12.4c2.7 0 4.8 2 4.8 4.1 0 2-1.7 3-3.4 3-.9 0-1 .3-1.4.3s-.6-.3-1.5-.3c-1.7 0-3.3-1-3.3-3 0-2.1 2.1-4.1 4.8-4.1z"/></symbol>
+    <symbol id="g-toys" viewBox="0 0 24 24"><rect x="4.2" y="13.2" width="6.2" height="6.2" rx="1"/><rect x="13.4" y="13.2" width="6.2" height="6.2" rx="1"/><rect x="8.8" y="5" width="6.2" height="6.2" rx="1"/></symbol>
+    <symbol id="g-fashion" viewBox="0 0 24 24"><path d="M6.6 8.8h10.8l1.2 11H5.4z"/><path d="M9.4 8.8V6.6a2.6 2.6 0 0 1 5.2 0v2.2"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="announce">
+    <p><strong>Front-end demo.</strong> StoreFront is a fictional shop built as a portfolio project — nothing is for sale and no data is collected.</p>
+</div>
+
+<header class="header" id="header">
+    <div class="header__inner wrap">
+        <a class="brand" href="index.html" aria-label="StoreFront home">
+            <img src="assets/logo.svg" alt="" width="34" height="34">
+            <span class="brand__name">Store<span>Front</span></span>
+        </a>
+
+        <nav class="nav nav--bar" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="index.html#categories" aria-current="page">Shop</a>
+            <a href="index.html#trending">Trending</a>
+            <a href="index.html#promise">Why us</a>
+        </nav>
+
+        <form class="search" role="search" onsubmit="return false">
+            <svg class="search__icon" aria-hidden="true"><use href="#i-search"/></svg>
+            <input id="searchInput" type="search" placeholder="Search this department&hellip;" aria-label="Search products in this department" autocomplete="off">
+            <button type="button" class="search__clear" id="searchClear" aria-label="Clear search" hidden>
+                <svg><use href="#i-close"/></svg>
+            </button>
+        </form>
+        <div class="header__actions">
+            <button class="icon-btn" id="themeToggle" aria-label="Switch to dark theme">
+                <svg class="icon-sun"><use href="#i-sun"/></svg>
+                <svg class="icon-moon"><use href="#i-moon"/></svg>
+            </button>
+            <button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart, 0 items" aria-expanded="false">
+                <svg><use href="#i-cart"/></svg>
+                <span class="cart-count" id="cartCount" data-empty="true">0</span>
+            </button>
+            <button class="icon-btn nav__open" id="navOpen" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+                <svg><use href="#i-menu"/></svg>
+            </button>
+        </div>
+    </div>
+</header>
+<div class="nav-scrim" id="navScrim" hidden></div>
+
+<nav class="nav-drawer" id="nav" aria-label="Primary">
+    <button class="nav__close" id="navClose" aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
+            <a href="index.html">Home</a>
+            <a href="index.html#categories" aria-current="page">Shop</a>
+            <a href="index.html#trending">Trending</a>
+            <a href="index.html#promise">Why us</a>
+</nav>
+
+<main id="main">
+    <div id="catPage">
+        <nav class="crumbs wrap" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <svg aria-hidden="true"><use href="#i-chevron"/></svg>
+            <a href="index.html#categories">Departments</a>
+            <svg aria-hidden="true"><use href="#i-chevron"/></svg>
+            <span id="crumbName" aria-current="page"></span>
+        </nav>
+
+        <section class="cat-hero">
+            <div class="wrap cat-hero__inner">
+                <div class="cat-hero__copy">
+                    <p class="eyebrow"><span class="dot"></span> Department</p>
+                    <h1 id="catName"></h1>
+                    <p class="cat-hero__blurb" id="catBlurb"></p>
+                    <p class="cat-hero__count" id="catCount"></p>
+                </div>
+                <div class="cat-hero__media">
+                    <img id="catImg" src="" alt="" width="600" height="450">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap">
+                <div class="toolbar">
+                    <p class="toolbar__count" id="shown" role="status" aria-live="polite"></p>
+                    <div class="toolbar__controls">
+                        <label class="switch">
+                            <input type="checkbox" id="saleOnly">
+                            <span>On sale only</span>
+                        </label>
+                        <label class="select">
+                            <span class="sr-only">Sort products</span>
+                            <select id="sort">
+                                <option value="featured">Featured</option>
+                                <option value="price-up">Price: low to high</option>
+                                <option value="price-down">Price: high to low</option>
+                                <option value="rating">Highest rated</option>
+                                <option value="name">Name A–Z</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="prod-grid" id="grid"></div>
+
+                <p class="empty" id="gridEmpty" hidden>
+                    Nothing here matches those filters.
+                </p>
+            </div>
+        </section>
+
+        <section class="section section--alt">
+            <div class="wrap">
+                <div class="section__head"><div>
+                    <p class="eyebrow">Keep looking</p>
+                    <h2>Other departments</h2>
+                </div></div>
+                <div class="chips" id="others"></div>
+            </div>
+        </section>
+    </div>
+
+    <section class="section" id="notFound" hidden>
+        <div class="wrap notfound">
+            <h1>Department not found</h1>
+            <p>That link doesn't match any department in this store. Try one of these instead:</p>
+            <ul id="nfList"></ul>
+            <a class="btn btn--primary" href="index.html">Back to the home page <svg><use href="#i-arrow"/></svg></a>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="wrap footer__grid">
+        <div class="footer__brand">
+            <a class="brand" href="index.html" aria-label="StoreFront home">
+                <img src="assets/logo.svg" alt="" width="34" height="34">
+                <span class="brand__name">Store<span>Front</span></span>
+            </a>
+            <p>A fictional storefront, hand-built with semantic HTML, modern CSS and vanilla JavaScript — no frameworks, no build step.</p>
+        </div>
+        <nav aria-label="Departments">
+            <h3>Departments</h3>
+            <ul>
+                <li><a href="category.html?c=health">Health & Personal Care</a></li>
+                <li><a href="category.html?c=clothing">Clothing</a></li>
+                <li><a href="category.html?c=furniture">Furniture</a></li>
+                <li><a href="category.html?c=smartphones">Smartphones</a></li>
+                <li><a href="category.html?c=gaming">Gaming</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="Support">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="index.html#promise">Delivery</a></li>
+                <li><a href="index.html#promise">Returns</a></li>
+                <li><a href="index.html#newsletter">Contact us</a></li>
+                <li><a href="index.html#promise">Help centre</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="Project">
+            <h3>Project</h3>
+            <ul>
+                <li><a href="https://github.com/abhinavshahi27" rel="noopener">GitHub</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="footer__bar">
+        <div class="wrap footer__bar-inner">
+            <p class="footer__legal"><a href="index.html">Terms</a> <a href="index.html">Privacy</a> <a href="index.html">Cookies</a></p>
+            <p class="footer__copy">StoreFront is a fictional brand created for a student front-end project. Not a real shop, not affiliated with any retailer, and it collects no data.</p>
+        </div>
+    </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top" hidden><svg><use href="#i-up"/></svg></button>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/category.js"></script>
+</body>
+</html>

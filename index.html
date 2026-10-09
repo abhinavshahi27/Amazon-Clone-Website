@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" content="#7c5cff">
-    <meta name="description"
-        content="StoreFront — a responsive e-commerce storefront UI built from scratch with HTML, CSS and vanilla JavaScript. A fictional shop used as a front-end portfolio project.">
+    <meta name="description" content="StoreFront — a responsive e-commerce storefront UI built from scratch with HTML, CSS and vanilla JavaScript. A fictional shop used as a front-end portfolio project.">
     <title>StoreFront — Modern E-Commerce UI</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +16,6 @@
     <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<!-- ---------- icon sprite ---------- -->
 <svg class="sprite" aria-hidden="true" focusable="false">
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
     <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2.2l2.2 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.55L20.5 8H6"/><circle cx="10" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/></symbol>
@@ -32,46 +30,50 @@
     <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 14.5a2.5 2.5 0 0 1-2.5 2.5H9l-4 3v-3H6a2.5 2.5 0 0 1-2.5-2.5v-8A2.5 2.5 0 0 1 6 4h11.5A2.5 2.5 0 0 1 20 6.5z"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M12 5.5 18.5 12 12 18.5"/></symbol>
     <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1.1 5.9-5.3-2.9-5.3 2.9 1.1-5.9L3.5 9.7l5.9-.8z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="g-health" viewBox="0 0 24 24"><path d="M12 3.2s6.2 6.4 6.2 10.5A6.2 6.2 0 1 1 5.8 13.7C5.8 9.6 12 3.2 12 3.2z"/></symbol>
+    <symbol id="g-clothing" viewBox="0 0 24 24"><path d="M8.6 3.6 5 5.6 3.3 9l2.6 1.4L5.7 20h12.6l-.2-9.6L20.7 9 19 5.6l-3.6-2a3.4 3.4 0 0 1-6.8 0z"/></symbol>
+    <symbol id="g-furniture" viewBox="0 0 24 24"><path d="M9 3.8h6l3.2 6.4H5.8z"/><path d="M12 10.2V19"/><path d="M8.4 19.8h7.2"/></symbol>
+    <symbol id="g-phone" viewBox="0 0 24 24"><rect x="6.2" y="2.8" width="11.6" height="18.4" rx="2.2"/><path d="M10.4 18.4h3.2"/></symbol>
+    <symbol id="g-gaming" viewBox="0 0 24 24"><path d="M8 8h8a5 5 0 0 1 5 5v1.4a2.5 2.5 0 0 1-4.6 1.4L15 14H9l-1.4 1.8A2.5 2.5 0 0 1 3 14.4V13a5 5 0 0 1 5-5z"/><path d="M7 11v2M6 12h2"/><circle cx="16" cy="11.6" r=".9"/><circle cx="17.6" cy="13.4" r=".9"/></symbol>
+    <symbol id="g-pet" viewBox="0 0 24 24"><ellipse cx="7.4" cy="9.6" rx="1.7" ry="2.2"/><ellipse cx="10.8" cy="7.6" rx="1.7" ry="2.4"/><ellipse cx="14.4" cy="7.6" rx="1.7" ry="2.4"/><ellipse cx="17.6" cy="9.6" rx="1.7" ry="2.2"/><path d="M12.4 12.4c2.7 0 4.8 2 4.8 4.1 0 2-1.7 3-3.4 3-.9 0-1 .3-1.4.3s-.6-.3-1.5-.3c-1.7 0-3.3-1-3.3-3 0-2.1 2.1-4.1 4.8-4.1z"/></symbol>
+    <symbol id="g-toys" viewBox="0 0 24 24"><rect x="4.2" y="13.2" width="6.2" height="6.2" rx="1"/><rect x="13.4" y="13.2" width="6.2" height="6.2" rx="1"/><rect x="8.8" y="5" width="6.2" height="6.2" rx="1"/></symbol>
+    <symbol id="g-fashion" viewBox="0 0 24 24"><path d="M6.6 8.8h10.8l1.2 11H5.4z"/><path d="M9.4 8.8V6.6a2.6 2.6 0 0 1 5.2 0v2.2"/></symbol>
 </svg>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- ---------- announcement ---------- -->
 <div class="announce">
     <p><strong>Front-end demo.</strong> StoreFront is a fictional shop built as a portfolio project — nothing is for sale and no data is collected.</p>
 </div>
 
-<!-- ---------- header ---------- -->
 <header class="header" id="header">
     <div class="header__inner wrap">
-        <a class="brand" href="#top" aria-label="StoreFront home">
+        <a class="brand" href="index.html" aria-label="StoreFront home">
             <img src="assets/logo.svg" alt="" width="34" height="34">
             <span class="brand__name">Store<span>Front</span></span>
         </a>
 
-        <nav class="nav" id="nav" aria-label="Primary">
-            <button class="nav__close" id="navClose" aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
-            <a href="#categories">Shop</a>
-            <a href="#trending">Trending</a>
-            <a href="#promise">Why us</a>
-            <a href="#newsletter">Contact</a>
+        <nav class="nav nav--bar" aria-label="Primary">
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="index.html#categories">Shop</a>
+            <a href="index.html#trending">Trending</a>
+            <a href="index.html#promise">Why us</a>
         </nav>
 
         <form class="search" role="search" onsubmit="return false">
             <svg class="search__icon" aria-hidden="true"><use href="#i-search"/></svg>
-            <input id="searchInput" type="search" placeholder="Search categories&hellip;"
-                   aria-label="Search categories" autocomplete="off">
+            <input id="searchInput" type="search" placeholder="Search departments&hellip;" aria-label="Search departments" autocomplete="off">
             <button type="button" class="search__clear" id="searchClear" aria-label="Clear search" hidden>
                 <svg><use href="#i-close"/></svg>
             </button>
         </form>
-
         <div class="header__actions">
             <button class="icon-btn" id="themeToggle" aria-label="Switch to dark theme">
                 <svg class="icon-sun"><use href="#i-sun"/></svg>
                 <svg class="icon-moon"><use href="#i-moon"/></svg>
             </button>
-            <button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart, 0 items">
+            <button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart, 0 items" aria-expanded="false">
                 <svg><use href="#i-cart"/></svg>
                 <span class="cart-count" id="cartCount" data-empty="true">0</span>
             </button>
@@ -83,25 +85,32 @@
 </header>
 <div class="nav-scrim" id="navScrim" hidden></div>
 
+<nav class="nav-drawer" id="nav" aria-label="Primary">
+    <button class="nav__close" id="navClose" aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="index.html#categories">Shop</a>
+            <a href="index.html#trending">Trending</a>
+            <a href="index.html#promise">Why us</a>
+</nav>
+
 <main id="main">
-    <!-- ---------- hero ---------- -->
     <section class="hero" id="top">
         <div class="wrap hero__inner">
             <div class="hero__copy">
                 <p class="eyebrow"><span class="dot"></span> New season drop</p>
                 <h1>Everything you need,<br><em>beautifully</em> delivered.</h1>
                 <p class="hero__lede">
-                    Eight curated departments, thousands of imaginary products, and a checkout
+                    Eight departments, ninety-six imaginary products, and a checkout
                     that never charges you a thing. Built to show what plain HTML, CSS and
                     JavaScript can still do.
                 </p>
                 <div class="hero__cta">
-                    <a class="btn btn--primary" href="#categories">Browse categories <svg><use href="#i-arrow"/></svg></a>
+                    <a class="btn btn--primary" href="#categories">Browse departments <svg><use href="#i-arrow"/></svg></a>
                     <a class="btn btn--ghost" href="#trending">See what's trending</a>
                 </div>
                 <dl class="hero__stats">
                     <div><dt>8</dt><dd>Departments</dd></div>
-                    <div><dt>24/7</dt><dd>Support</dd></div>
+                    <div><dt>96</dt><dd>Products</dd></div>
                     <div><dt>0%</dt><dd>Real charges</dd></div>
                 </dl>
             </div>
@@ -117,7 +126,6 @@
         </div>
     </section>
 
-    <!-- ---------- promise strip ---------- -->
     <section class="promise" id="promise" aria-label="Store promises">
         <div class="wrap promise__grid">
             <div class="promise__item reveal"><svg><use href="#i-truck"/></svg><div><h3>Free delivery</h3><p>On every imaginary order</p></div></div>
@@ -127,7 +135,6 @@
         </div>
     </section>
 
-    <!-- ---------- categories ---------- -->
     <section class="section" id="categories">
         <div class="wrap">
             <div class="section__head">
@@ -139,37 +146,61 @@
             </div>
 
             <div class="cat-grid" id="catGrid">
-                <a class="cat reveal" href="#categories" data-name="Health &amp; Personal Care" data-tags="health beauty care wellness skincare">
-                    <div class="cat__img"><img src="assets/health-personal-care.jpg" alt="Toiletries laid out on a pale wooden surface" loading="lazy" width="600" height="600"></div>
-                    <div class="cat__body"><h3>Health &amp; Personal Care</h3><p>412 items</p></div>
+                <a class="cat reveal" href="category.html?c=health" data-name="Health &amp; Personal Care" data-tags="health beauty care wellness skincare">
+                    <div class="cat__img"><img src="assets/health-personal-care.jpg" alt="Health & Personal Care" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__body">
+                        <h3>Health &amp; Personal Care</h3>
+                        <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
+                    </div>
                 </a>
-                <a class="cat reveal" href="#categories" data-name="Clothing" data-tags="clothes apparel towels textiles fashion">
-                    <div class="cat__img"><img src="assets/clothing.jpg" alt="Folded towels and garments in soft pastel colours" loading="lazy" width="600" height="600"></div>
-                    <div class="cat__body"><h3>Clothing</h3><p>1,208 items</p></div>
+                <a class="cat reveal" href="category.html?c=clothing" data-name="Clothing" data-tags="clothes apparel towels textiles">
+                    <div class="cat__img"><img src="assets/clothing.jpg" alt="Clothing" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__body">
+                        <h3>Clothing</h3>
+                        <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
+                    </div>
                 </a>
-                <a class="cat reveal" href="#categories" data-name="Furniture" data-tags="furniture home desk interior living">
-                    <div class="cat__img"><img src="assets/furniture.jpg" alt="A white writing desk with a chair and decorative objects" loading="lazy" width="600" height="600"></div>
-                    <div class="cat__body"><h3>Furniture</h3><p>336 items</p></div>
+                <a class="cat reveal" href="category.html?c=furniture" data-name="Furniture" data-tags="furniture home desk interior living">
+                    <div class="cat__img"><img src="assets/furniture.jpg" alt="Furniture" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__body">
+                        <h3>Furniture</h3>
+                        <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
+                    </div>
                 </a>
-                <a class="cat reveal" href="#categories" data-name="Smartphones" data-tags="phones mobile smartphones tech electronics">
-                    <div class="cat__img"><img src="assets/smartphones.jpg" alt="A smartphone shown front and back with a stylus" loading="lazy" width="600" height="600"></div>
-                    <div class="cat__body"><h3>Smartphones</h3><p>189 items</p></div>
+                <a class="cat reveal" href="category.html?c=smartphones" data-name="Smartphones" data-tags="phones mobile tech electronics">
+                    <div class="cat__img"><img src="assets/smartphones.jpg" alt="Smartphones" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__body">
+                        <h3>Smartphones</h3>
+                        <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
+                    </div>
                 </a>
-                <a class="cat reveal" href="#categories" data-name="Gaming" data-tags="gaming console controller games accessories tech">
-                    <div class="cat__img"><img src="assets/gaming.jpg" alt="An assortment of game controllers, handhelds and accessories" loading="lazy" width="600" height="600"></div>
-                    <div class="cat__body"><h3>Gaming</h3><p>527 items</p></div>
+                <a class="cat reveal" href="category.html?c=gaming" data-name="Gaming" data-tags="gaming console controller games tech">
+                    <div class="cat__img"><img src="assets/gaming.jpg" alt="Gaming" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__body">
+                        <h3>Gaming</h3>
+                        <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
+                    </div>
                 </a>
-                <a class="cat reveal" href="#categories" data-name="Pet Care" data-tags="pets dog cat animals care">
-                    <div class="cat__img"><img src="assets/pet-care.jpg" alt="A golden retriever and a cat resting together indoors" loading="lazy" width="600" height="600"></div>
-                    <div class="cat__body"><h3>Pet Care</h3><p>274 items</p></div>
+                <a class="cat reveal" href="category.html?c=pet-care" data-name="Pet Care" data-tags="pets dog cat animals care">
+                    <div class="cat__img"><img src="assets/pet-care.jpg" alt="Pet Care" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__body">
+                        <h3>Pet Care</h3>
+                        <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
+                    </div>
                 </a>
-                <a class="cat reveal" href="#categories" data-name="Toys" data-tags="toys kids children play games">
-                    <div class="cat__img"><img src="assets/toys.jpg" alt="Children's toys arranged on a bright yellow background" loading="lazy" width="600" height="600"></div>
-                    <div class="cat__body"><h3>Toys</h3><p>645 items</p></div>
+                <a class="cat reveal" href="category.html?c=toys" data-name="Toys" data-tags="toys kids children play games">
+                    <div class="cat__img"><img src="assets/toys.jpg" alt="Toys" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__body">
+                        <h3>Toys</h3>
+                        <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
+                    </div>
                 </a>
-                <a class="cat reveal" href="#categories" data-name="Fashion" data-tags="fashion style clothing women trends outfits">
-                    <div class="cat__img"><img src="assets/fashion.jpg" alt="Two models wearing pastel spring outfits and jewellery" loading="lazy" width="600" height="600"></div>
-                    <div class="cat__body"><h3>Fashion</h3><p>931 items</p></div>
+                <a class="cat reveal" href="category.html?c=fashion" data-name="Fashion" data-tags="fashion style women trends outfits">
+                    <div class="cat__img"><img src="assets/fashion.jpg" alt="Fashion" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__body">
+                        <h3>Fashion</h3>
+                        <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
+                    </div>
                 </a>
             </div>
 
@@ -179,7 +210,6 @@
         </div>
     </section>
 
-    <!-- ---------- trending ---------- -->
     <section class="section section--alt" id="trending">
         <div class="wrap">
             <div class="section__head">
@@ -191,46 +221,53 @@
 
             <div class="prod-grid">
                 <article class="prod reveal">
-                    <div class="prod__img"><img src="assets/hero-gaming.jpg" alt="A pro wireless game controller" loading="lazy" width="1250" height="1200"><span class="tag">-40%</span></div>
+                    <div class="prod__img">
+                        <div class="prod__art art-tile art-tile--v1" style="--h:241"><svg class="art" aria-hidden="true"><use href="#g-gaming"/></svg></div><span class="tag">-20%</span>
+                    </div>
                     <div class="prod__body">
                         <h3>Pro Wireless Controller</h3>
-                        <p class="rating"><svg><use href="#i-star"/></svg><span>4.8</span> <small>(1,204)</small></p>
-                        <p class="price">$59 <s>$99</s></p>
-                        <button class="btn btn--add" data-add="Pro Wireless Controller">Add to cart</button>
+                        <p class="rating"><svg><use href="#i-star"/></svg><span>4.5</span> <small>(2,569)</small></p>
+                        <p class="price">$59.00 <s>$74.05</s></p>
+                        <button class="btn btn--add" data-add-id="p49">Add to cart</button>
                     </div>
                 </article>
                 <article class="prod reveal">
-                    <div class="prod__img"><img src="assets/furniture.jpg" alt="A minimalist white writing desk" loading="lazy" width="600" height="600"></div>
+                    <div class="prod__img">
+                        <div class="prod__art art-tile art-tile--v1" style="--h:195"><svg class="art" aria-hidden="true"><use href="#g-furniture"/></svg></div><span class="tag">-27%</span>
+                    </div>
                     <div class="prod__body">
                         <h3>Minimalist Writing Desk</h3>
-                        <p class="rating"><svg><use href="#i-star"/></svg><span>4.6</span> <small>(318)</small></p>
-                        <p class="price">$240</p>
-                        <button class="btn btn--add" data-add="Minimalist Writing Desk">Add to cart</button>
+                        <p class="rating"><svg><use href="#i-star"/></svg><span>4.1</span> <small>(899)</small></p>
+                        <p class="price">$240.00 <s>$328.78</s></p>
+                        <button class="btn btn--add" data-add-id="p25">Add to cart</button>
                     </div>
                 </article>
                 <article class="prod reveal">
-                    <div class="prod__img"><img src="assets/clothing.jpg" alt="A stack of soft cotton towels" loading="lazy" width="600" height="600"><span class="tag tag--new">New</span></div>
+                    <div class="prod__img">
+                        <div class="prod__art art-tile art-tile--v1" style="--h:254"><svg class="art" aria-hidden="true"><use href="#g-clothing"/></svg></div>
+                    </div>
                     <div class="prod__body">
                         <h3>Everyday Cotton Set</h3>
-                        <p class="rating"><svg><use href="#i-star"/></svg><span>4.9</span> <small>(2,871)</small></p>
-                        <p class="price">$34</p>
-                        <button class="btn btn--add" data-add="Everyday Cotton Set">Add to cart</button>
+                        <p class="rating"><svg><use href="#i-star"/></svg><span>3.8</span> <small>(172)</small></p>
+                        <p class="price">$34.00</p>
+                        <button class="btn btn--add" data-add-id="p13">Add to cart</button>
                     </div>
                 </article>
                 <article class="prod reveal">
-                    <div class="prod__img"><img src="assets/toys.jpg" alt="A colourful set of children's toys" loading="lazy" width="600" height="600"></div>
+                    <div class="prod__img">
+                        <div class="prod__art art-tile art-tile--v1" style="--h:287"><svg class="art" aria-hidden="true"><use href="#g-toys"/></svg></div><span class="tag">-31%</span>
+                    </div>
                     <div class="prod__body">
                         <h3>Build &amp; Play Bundle</h3>
-                        <p class="rating"><svg><use href="#i-star"/></svg><span>4.7</span> <small>(640)</small></p>
-                        <p class="price">$28</p>
-                        <button class="btn btn--add" data-add="Build &amp; Play Bundle">Add to cart</button>
+                        <p class="rating"><svg><use href="#i-star"/></svg><span>5.0</span> <small>(4,527)</small></p>
+                        <p class="price">$28.00 <s>$40.32</s></p>
+                        <button class="btn btn--add" data-add-id="p73">Add to cart</button>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- ---------- newsletter ---------- -->
     <section class="newsletter" id="newsletter">
         <div class="wrap newsletter__inner reveal">
             <div>
@@ -246,54 +283,55 @@
     </section>
 </main>
 
-<!-- ---------- footer ---------- -->
 <footer class="footer">
     <div class="wrap footer__grid">
         <div class="footer__brand">
-            <a class="brand" href="#top" aria-label="StoreFront home">
+            <a class="brand" href="index.html" aria-label="StoreFront home">
                 <img src="assets/logo.svg" alt="" width="34" height="34">
                 <span class="brand__name">Store<span>Front</span></span>
             </a>
             <p>A fictional storefront, hand-built with semantic HTML, modern CSS and vanilla JavaScript — no frameworks, no build step.</p>
         </div>
-        <nav aria-label="Shop">
-            <h3>Shop</h3>
+        <nav aria-label="Departments">
+            <h3>Departments</h3>
             <ul>
-                <li><a href="#categories">All departments</a></li>
-                <li><a href="#trending">Trending</a></li>
-                <li><a href="#categories">Gift cards</a></li>
-                <li><a href="#categories">Clearance</a></li>
+                <li><a href="category.html?c=health">Health & Personal Care</a></li>
+                <li><a href="category.html?c=clothing">Clothing</a></li>
+                <li><a href="category.html?c=furniture">Furniture</a></li>
+                <li><a href="category.html?c=smartphones">Smartphones</a></li>
+                <li><a href="category.html?c=gaming">Gaming</a></li>
             </ul>
         </nav>
         <nav aria-label="Support">
             <h3>Support</h3>
             <ul>
-                <li><a href="#promise">Delivery</a></li>
-                <li><a href="#promise">Returns</a></li>
-                <li><a href="#newsletter">Contact us</a></li>
-                <li><a href="#promise">Help centre</a></li>
+                <li><a href="index.html#promise">Delivery</a></li>
+                <li><a href="index.html#promise">Returns</a></li>
+                <li><a href="index.html#newsletter">Contact us</a></li>
+                <li><a href="index.html#promise">Help centre</a></li>
             </ul>
         </nav>
         <nav aria-label="Project">
             <h3>Project</h3>
             <ul>
                 <li><a href="https://github.com/abhinavshahi27" rel="noopener">GitHub</a></li>
-                <li><a href="#top">Source &amp; README</a></li>
-                <li><a href="#top">Built with</a></li>
+                <li><a href="index.html">Home</a></li>
             </ul>
         </nav>
     </div>
     <div class="footer__bar">
         <div class="wrap footer__bar-inner">
-            <p class="footer__legal"><a href="#top">Terms</a> <a href="#top">Privacy</a> <a href="#top">Cookies</a></p>
+            <p class="footer__legal"><a href="index.html">Terms</a> <a href="index.html">Privacy</a> <a href="index.html">Cookies</a></p>
             <p class="footer__copy">StoreFront is a fictional brand created for a student front-end project. Not a real shop, not affiliated with any retailer, and it collects no data.</p>
         </div>
     </div>
 </footer>
 
 <button class="to-top" id="toTop" aria-label="Back to top" hidden><svg><use href="#i-up"/></svg></button>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="script.js"></script>
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>
