@@ -60,8 +60,8 @@
             e.preventDefault();
             var email = $('#email');
             UI.toast(email && email.value
-                ? 'Thanks! Nothing was actually sent — this is a demo.'
-                : 'Add an email address first (it still goes nowhere).');
+                ? 'Thanks \u2014 StoreFront is a demo, so nothing was actually sent.'
+                : 'Add an email address first.');
             newsletter.reset();
         });
     }

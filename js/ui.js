@@ -161,7 +161,7 @@ window.UI = (function () {
             '</div>' +
             '<div class="cart-panel__foot" id="cartFoot">' +
                 '<div class="cart-total"><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div>' +
-                '<p class="cart-note">Demo only — nothing is charged and no order is placed.</p>' +
+                '<p class="cart-note">StoreFront is a demo &mdash; no payment is taken and no order is placed.</p>' +
                 '<button class="btn btn--primary" id="cartCheckout">Checkout</button>' +
                 '<button class="link-btn" id="cartClear">Empty cart</button>' +
             '</div>';
