@@ -1,4 +1,5 @@
-/* Auto-generated product catalogue — 96 products across 8 departments. */
+/* Auto-generated product catalogue — 96 products across 8 departments.
+   Each product carries an icon slug matching a p-* symbol in the page SVG sprite. */
 window.CATALOG = {
  "categories": [
   {
@@ -70,6 +71,7 @@ window.CATALOG = {
   {
    "id": "p1",
    "cat": "health",
+   "icon": "p-pumpbottle",
    "name": "Daily Face Cleanser",
    "price": 12.99,
    "old": null,
@@ -81,6 +83,7 @@ window.CATALOG = {
   {
    "id": "p2",
    "cat": "health",
+   "icon": "p-toothbrush",
    "name": "Bamboo Toothbrush Set",
    "price": 9.99,
    "old": null,
@@ -92,6 +95,7 @@ window.CATALOG = {
   {
    "id": "p3",
    "cat": "health",
+   "icon": "p-shaver",
    "name": "Electric Shaver Pro",
    "price": 64.99,
    "old": 84.5,
@@ -103,6 +107,7 @@ window.CATALOG = {
   {
    "id": "p4",
    "cat": "health",
+   "icon": "p-lotion",
    "name": "Hydrating Body Lotion",
    "price": 11.99,
    "old": null,
@@ -114,6 +119,7 @@ window.CATALOG = {
   {
    "id": "p5",
    "cat": "health",
+   "icon": "p-serum",
    "name": "Vitamin C Serum",
    "price": 24.99,
    "old": null,
@@ -125,6 +131,7 @@ window.CATALOG = {
   {
    "id": "p6",
    "cat": "health",
+   "icon": "p-washbag",
    "name": "Travel Wash Bag",
    "price": 18.99,
    "old": null,
@@ -136,6 +143,7 @@ window.CATALOG = {
   {
    "id": "p7",
    "cat": "health",
+   "icon": "p-shavegel",
    "name": "Aloe Shaving Gel",
    "price": 7.49,
    "old": null,
@@ -147,6 +155,7 @@ window.CATALOG = {
   {
    "id": "p8",
    "cat": "health",
+   "icon": "p-sonicbrush",
    "name": "Sonic Toothbrush",
    "price": 49.99,
    "old": 71.92,
@@ -158,6 +167,7 @@ window.CATALOG = {
   {
    "id": "p9",
    "cat": "health",
+   "icon": "p-cloths",
    "name": "Cotton Face Cloths",
    "price": 8.99,
    "old": null,
@@ -169,6 +179,7 @@ window.CATALOG = {
   {
    "id": "p10",
    "cat": "health",
+   "icon": "p-deo",
    "name": "Refillable Deodorant",
    "price": 13.99,
    "old": 17.55,
@@ -180,6 +191,7 @@ window.CATALOG = {
   {
    "id": "p11",
    "cat": "health",
+   "icon": "p-shampoo",
    "name": "Scalp Care Shampoo",
    "price": 15.99,
    "old": null,
@@ -191,6 +203,7 @@ window.CATALOG = {
   {
    "id": "p12",
    "cat": "health",
+   "icon": "p-creamjar",
    "name": "Hand Cream Duo",
    "price": 10.49,
    "old": null,
@@ -202,6 +215,7 @@ window.CATALOG = {
   {
    "id": "p13",
    "cat": "clothing",
+   "icon": "p-tshirt",
    "name": "Everyday Cotton Set",
    "price": 34.0,
    "old": null,
@@ -213,6 +227,7 @@ window.CATALOG = {
   {
    "id": "p14",
    "cat": "clothing",
+   "icon": "p-jumper",
    "name": "Merino Crew Jumper",
    "price": 78.0,
    "old": null,
@@ -224,6 +239,7 @@ window.CATALOG = {
   {
    "id": "p15",
    "cat": "clothing",
+   "icon": "p-shirt",
    "name": "Oversized Linen Shirt",
    "price": 52.0,
    "old": 72.42,
@@ -235,6 +251,7 @@ window.CATALOG = {
   {
    "id": "p16",
    "cat": "clothing",
+   "icon": "p-hoodie",
    "name": "Brushed Fleece Hoodie",
    "price": 45.0,
    "old": null,
@@ -246,6 +263,7 @@ window.CATALOG = {
   {
    "id": "p17",
    "cat": "clothing",
+   "icon": "p-towel",
    "name": "Waffle Towel Pair",
    "price": 28.0,
    "old": null,
@@ -257,6 +275,7 @@ window.CATALOG = {
   {
    "id": "p18",
    "cat": "clothing",
+   "icon": "p-trousers",
    "name": "Relaxed Chino Trousers",
    "price": 49.0,
    "old": null,
@@ -268,6 +287,7 @@ window.CATALOG = {
   {
    "id": "p19",
    "cat": "clothing",
+   "icon": "p-socks",
    "name": "Ribbed Cotton Socks",
    "price": 14.0,
    "old": null,
@@ -279,6 +299,7 @@ window.CATALOG = {
   {
    "id": "p20",
    "cat": "clothing",
+   "icon": "p-blanket",
    "name": "Quilted Throw Blanket",
    "price": 62.0,
    "old": 76.34,
@@ -290,6 +311,7 @@ window.CATALOG = {
   {
    "id": "p21",
    "cat": "clothing",
+   "icon": "p-tee3",
    "name": "Jersey T-Shirt 3-Pack",
    "price": 32.0,
    "old": null,
@@ -301,6 +323,7 @@ window.CATALOG = {
   {
    "id": "p22",
    "cat": "clothing",
+   "icon": "p-rainshell",
    "name": "Lightweight Rain Shell",
    "price": 89.0,
    "old": 119.86,
@@ -312,6 +335,7 @@ window.CATALOG = {
   {
    "id": "p23",
    "cat": "clothing",
+   "icon": "p-joggers",
    "name": "Lounge Jogger Pants",
    "price": 38.0,
    "old": null,
@@ -323,6 +347,7 @@ window.CATALOG = {
   {
    "id": "p24",
    "cat": "clothing",
+   "icon": "p-beanie",
    "name": "Knit Beanie",
    "price": 19.0,
    "old": null,
@@ -334,6 +359,7 @@ window.CATALOG = {
   {
    "id": "p25",
    "cat": "furniture",
+   "icon": "p-desk",
    "name": "Minimalist Writing Desk",
    "price": 240.0,
    "old": 328.78,
@@ -345,6 +371,7 @@ window.CATALOG = {
   {
    "id": "p26",
    "cat": "furniture",
+   "icon": "p-armchair",
    "name": "Velvet Accent Chair",
    "price": 310.0,
    "old": null,
@@ -356,6 +383,7 @@ window.CATALOG = {
   {
    "id": "p27",
    "cat": "furniture",
+   "icon": "p-nightstand",
    "name": "Oak Bedside Table",
    "price": 145.0,
    "old": 215.37,
@@ -367,6 +395,7 @@ window.CATALOG = {
   {
    "id": "p28",
    "cat": "furniture",
+   "icon": "p-shelf",
    "name": "Floating Wall Shelf",
    "price": 48.0,
    "old": null,
@@ -378,6 +407,7 @@ window.CATALOG = {
   {
    "id": "p29",
    "cat": "furniture",
+   "icon": "p-lamp",
    "name": "Woven Floor Lamp",
    "price": 119.0,
    "old": null,
@@ -389,6 +419,7 @@ window.CATALOG = {
   {
    "id": "p30",
    "cat": "furniture",
+   "icon": "p-bookcase",
    "name": "Compact Bookcase",
    "price": 189.0,
    "old": null,
@@ -400,6 +431,7 @@ window.CATALOG = {
   {
    "id": "p31",
    "cat": "furniture",
+   "icon": "p-sidetable",
    "name": "Marble Side Table",
    "price": 165.0,
    "old": null,
@@ -411,6 +443,7 @@ window.CATALOG = {
   {
    "id": "p32",
    "cat": "furniture",
+   "icon": "p-ottoman",
    "name": "Upholstered Ottoman",
    "price": 98.0,
    "old": 129.74,
@@ -422,6 +455,7 @@ window.CATALOG = {
   {
    "id": "p33",
    "cat": "furniture",
+   "icon": "p-diningtable",
    "name": "Extendable Dining Table",
    "price": 429.0,
    "old": null,
@@ -433,6 +467,7 @@ window.CATALOG = {
   {
    "id": "p34",
    "cat": "furniture",
+   "icon": "p-basket",
    "name": "Rattan Storage Basket",
    "price": 36.0,
    "old": null,
@@ -444,6 +479,7 @@ window.CATALOG = {
   {
    "id": "p35",
    "cat": "furniture",
+   "icon": "p-mirror",
    "name": "Full-Length Mirror",
    "price": 132.0,
    "old": null,
@@ -455,6 +491,7 @@ window.CATALOG = {
   {
    "id": "p36",
    "cat": "furniture",
+   "icon": "p-coffeetable",
    "name": "Nesting Coffee Tables",
    "price": 215.0,
    "old": null,
@@ -466,6 +503,7 @@ window.CATALOG = {
   {
    "id": "p37",
    "cat": "smartphones",
+   "icon": "p-phone-flag",
    "name": "Flagship 5G Handset",
    "price": 1099.0,
    "old": 1607.26,
@@ -477,6 +515,7 @@ window.CATALOG = {
   {
    "id": "p38",
    "cat": "smartphones",
+   "icon": "p-phone-compact",
    "name": "Compact 5G Phone",
    "price": 699.0,
    "old": null,
@@ -488,6 +527,7 @@ window.CATALOG = {
   {
    "id": "p39",
    "cat": "smartphones",
+   "icon": "p-phone-rugged",
    "name": "Rugged Outdoor Phone",
    "price": 449.0,
    "old": 573.78,
@@ -499,6 +539,7 @@ window.CATALOG = {
   {
    "id": "p40",
    "cat": "smartphones",
+   "icon": "p-phone-budget",
    "name": "Budget Smart Phone",
    "price": 179.0,
    "old": null,
@@ -510,6 +551,7 @@ window.CATALOG = {
   {
    "id": "p41",
    "cat": "smartphones",
+   "icon": "p-phone-fold",
    "name": "Foldable Screen Phone",
    "price": 1349.0,
    "old": null,
@@ -521,6 +563,7 @@ window.CATALOG = {
   {
    "id": "p42",
    "cat": "smartphones",
+   "icon": "p-phone-stylus",
    "name": "Stylus Note Phone",
    "price": 899.0,
    "old": 1169.63,
@@ -532,6 +575,7 @@ window.CATALOG = {
   {
    "id": "p43",
    "cat": "smartphones",
+   "icon": "p-phone-camera",
    "name": "Camera-First Phone",
    "price": 799.0,
    "old": null,
@@ -543,6 +587,7 @@ window.CATALOG = {
   {
    "id": "p44",
    "cat": "smartphones",
+   "icon": "p-phone-mini",
    "name": "Lightweight Mini Phone",
    "price": 529.0,
    "old": 749.31,
@@ -554,6 +599,7 @@ window.CATALOG = {
   {
    "id": "p45",
    "cat": "smartphones",
+   "icon": "p-phone-travel",
    "name": "Dual-SIM Travel Phone",
    "price": 249.0,
    "old": null,
@@ -565,6 +611,7 @@ window.CATALOG = {
   {
    "id": "p46",
    "cat": "smartphones",
+   "icon": "p-phone-battery",
    "name": "Long-Life Battery Phone",
    "price": 329.0,
    "old": null,
@@ -576,6 +623,7 @@ window.CATALOG = {
   {
    "id": "p47",
    "cat": "smartphones",
+   "icon": "p-phone-student",
    "name": "Student Starter Phone",
    "price": 139.0,
    "old": null,
@@ -587,6 +635,7 @@ window.CATALOG = {
   {
    "id": "p48",
    "cat": "smartphones",
+   "icon": "p-phone-refurb",
    "name": "Refurbished Flagship",
    "price": 489.0,
    "old": null,
@@ -598,6 +647,7 @@ window.CATALOG = {
   {
    "id": "p49",
    "cat": "gaming",
+   "icon": "p-gamepad",
    "name": "Pro Wireless Controller",
    "price": 59.0,
    "old": 74.05,
@@ -609,6 +659,7 @@ window.CATALOG = {
   {
    "id": "p50",
    "cat": "gaming",
+   "icon": "p-handheld",
    "name": "Handheld Console",
    "price": 299.0,
    "old": null,
@@ -620,6 +671,7 @@ window.CATALOG = {
   {
    "id": "p51",
    "cat": "gaming",
+   "icon": "p-keyboard",
    "name": "Mechanical Keypad",
    "price": 89.0,
    "old": 121.97,
@@ -631,6 +683,7 @@ window.CATALOG = {
   {
    "id": "p52",
    "cat": "gaming",
+   "icon": "p-mouse",
    "name": "RGB Gaming Mouse",
    "price": 45.0,
    "old": null,
@@ -642,6 +695,7 @@ window.CATALOG = {
   {
    "id": "p53",
    "cat": "gaming",
+   "icon": "p-vr",
    "name": "VR Headset Lite",
    "price": 349.0,
    "old": null,
@@ -653,6 +707,7 @@ window.CATALOG = {
   {
    "id": "p54",
    "cat": "gaming",
+   "icon": "p-gpu",
    "name": "Graphics Card 12GB",
    "price": 519.0,
    "old": 723.28,
@@ -664,6 +719,7 @@ window.CATALOG = {
   {
    "id": "p55",
    "cat": "gaming",
+   "icon": "p-fightstick",
    "name": "Arcade Fight Stick",
    "price": 169.0,
    "old": null,
@@ -675,6 +731,7 @@ window.CATALOG = {
   {
    "id": "p56",
    "cat": "gaming",
+   "icon": "p-dock",
    "name": "Console Charging Dock",
    "price": 29.0,
    "old": 35.06,
@@ -686,6 +743,7 @@ window.CATALOG = {
   {
    "id": "p57",
    "cat": "gaming",
+   "icon": "p-headset",
    "name": "Gaming Headset",
    "price": 79.0,
    "old": null,
@@ -697,6 +755,7 @@ window.CATALOG = {
   {
    "id": "p58",
    "cat": "gaming",
+   "icon": "p-wheel",
    "name": "Racing Wheel Set",
    "price": 239.0,
    "old": null,
@@ -708,6 +767,7 @@ window.CATALOG = {
   {
    "id": "p59",
    "cat": "gaming",
+   "icon": "p-capture",
    "name": "Capture Card 4K",
    "price": 129.0,
    "old": null,
@@ -719,6 +779,7 @@ window.CATALOG = {
   {
    "id": "p60",
    "cat": "gaming",
+   "icon": "p-grips",
    "name": "Controller Grip Pack",
    "price": 16.0,
    "old": null,
@@ -730,6 +791,7 @@ window.CATALOG = {
   {
    "id": "p61",
    "cat": "pet-care",
+   "icon": "p-dogbed",
    "name": "Orthopaedic Dog Bed",
    "price": 74.0,
    "old": 99.72,
@@ -741,6 +803,7 @@ window.CATALOG = {
   {
    "id": "p62",
    "cat": "pet-care",
+   "icon": "p-feeder",
    "name": "Ceramic Slow Feeder",
    "price": 22.0,
    "old": null,
@@ -752,6 +815,7 @@ window.CATALOG = {
   {
    "id": "p63",
    "cat": "pet-care",
+   "icon": "p-ropebone",
    "name": "Rope Tug Toy Set",
    "price": 14.0,
    "old": null,
@@ -763,6 +827,7 @@ window.CATALOG = {
   {
    "id": "p64",
    "cat": "pet-care",
+   "icon": "p-litter",
    "name": "Self-Cleaning Litter Tray",
    "price": 119.0,
    "old": null,
@@ -774,6 +839,7 @@ window.CATALOG = {
   {
    "id": "p65",
    "cat": "pet-care",
+   "icon": "p-harness",
    "name": "Adjustable Walk Harness",
    "price": 27.0,
    "old": null,
@@ -785,6 +851,7 @@ window.CATALOG = {
   {
    "id": "p66",
    "cat": "pet-care",
+   "icon": "p-scratchpost",
    "name": "Cat Scratching Post",
    "price": 49.0,
    "old": 72.82,
@@ -796,6 +863,7 @@ window.CATALOG = {
   {
    "id": "p67",
    "cat": "pet-care",
+   "icon": "p-petbrush",
    "name": "Grooming Brush Set",
    "price": 18.0,
    "old": null,
@@ -807,6 +875,7 @@ window.CATALOG = {
   {
    "id": "p68",
    "cat": "pet-care",
+   "icon": "p-petbottle",
    "name": "Travel Water Bottle",
    "price": 12.0,
    "old": 15.62,
@@ -818,6 +887,7 @@ window.CATALOG = {
   {
    "id": "p69",
    "cat": "pet-care",
+   "icon": "p-bowls",
    "name": "Stainless Food Bowls",
    "price": 25.0,
    "old": null,
@@ -829,6 +899,7 @@ window.CATALOG = {
   {
    "id": "p70",
    "cat": "pet-care",
+   "icon": "p-treatball",
    "name": "Puzzle Treat Dispenser",
    "price": 16.0,
    "old": null,
@@ -840,6 +911,7 @@ window.CATALOG = {
   {
    "id": "p71",
    "cat": "pet-care",
+   "icon": "p-petblanket",
    "name": "Fleece Pet Blanket",
    "price": 21.0,
    "old": 27.82,
@@ -851,6 +923,7 @@ window.CATALOG = {
   {
    "id": "p72",
    "cat": "pet-care",
+   "icon": "p-clipper",
    "name": "Nail Trimmer Kit",
    "price": 15.0,
    "old": null,
@@ -862,6 +935,7 @@ window.CATALOG = {
   {
    "id": "p73",
    "cat": "toys",
+   "icon": "p-bricks",
    "name": "Build & Play Bundle",
    "price": 28.0,
    "old": 40.32,
@@ -873,6 +947,7 @@ window.CATALOG = {
   {
    "id": "p74",
    "cat": "toys",
+   "icon": "p-train",
    "name": "Wooden Train Set",
    "price": 42.0,
    "old": null,
@@ -884,6 +959,7 @@ window.CATALOG = {
   {
    "id": "p75",
    "cat": "toys",
+   "icon": "p-palette",
    "name": "Watercolour Art Kit",
    "price": 19.0,
    "old": null,
@@ -895,6 +971,7 @@ window.CATALOG = {
   {
    "id": "p76",
    "cat": "toys",
+   "icon": "p-car",
    "name": "Die-Cast Car Pack",
    "price": 15.0,
    "old": null,
@@ -906,6 +983,7 @@ window.CATALOG = {
   {
    "id": "p77",
    "cat": "toys",
+   "icon": "p-teddy",
    "name": "Plush Animal Trio",
    "price": 24.0,
    "old": null,
@@ -917,6 +995,7 @@ window.CATALOG = {
   {
    "id": "p78",
    "cat": "toys",
+   "icon": "p-robot",
    "name": "STEM Robot Kit",
    "price": 59.0,
    "old": 75.44,
@@ -928,6 +1007,7 @@ window.CATALOG = {
   {
    "id": "p79",
    "cat": "toys",
+   "icon": "p-puzzle",
    "name": "Jigsaw Puzzle 500pc",
    "price": 13.0,
    "old": null,
@@ -939,6 +1019,7 @@ window.CATALOG = {
   {
    "id": "p80",
    "cat": "toys",
+   "icon": "p-kite",
    "name": "Kite & Beach Set",
    "price": 17.0,
    "old": 23.7,
@@ -950,6 +1031,7 @@ window.CATALOG = {
   {
    "id": "p81",
    "cat": "toys",
+   "icon": "p-tiles",
    "name": "Magnetic Tile Set",
    "price": 48.0,
    "old": null,
@@ -961,6 +1043,7 @@ window.CATALOG = {
   {
    "id": "p82",
    "cat": "toys",
+   "icon": "p-dino",
    "name": "Dinosaur Figure Pack",
    "price": 21.0,
    "old": null,
@@ -972,6 +1055,7 @@ window.CATALOG = {
   {
    "id": "p83",
    "cat": "toys",
+   "icon": "p-flask",
    "name": "Junior Science Lab",
    "price": 36.0,
    "old": 51.02,
@@ -983,6 +1067,7 @@ window.CATALOG = {
   {
    "id": "p84",
    "cat": "toys",
+   "icon": "p-bike",
    "name": "Ride-On Balance Bike",
    "price": 68.0,
    "old": null,
@@ -994,6 +1079,7 @@ window.CATALOG = {
   {
    "id": "p85",
    "cat": "fashion",
+   "icon": "p-dress",
    "name": "Pleated Midi Dress",
    "price": 68.0,
    "old": 83.82,
@@ -1005,6 +1091,7 @@ window.CATALOG = {
   {
    "id": "p86",
    "cat": "fashion",
+   "icon": "p-coord",
    "name": "Ribbed Knit Co-ord",
    "price": 84.0,
    "old": null,
@@ -1016,6 +1103,7 @@ window.CATALOG = {
   {
    "id": "p87",
    "cat": "fashion",
+   "icon": "p-heel",
    "name": "Strappy Heeled Sandals",
    "price": 72.0,
    "old": null,
@@ -1027,6 +1115,7 @@ window.CATALOG = {
   {
    "id": "p88",
    "cat": "fashion",
+   "icon": "p-earring",
    "name": "Beaded Drop Earrings",
    "price": 26.0,
    "old": null,
@@ -1038,6 +1127,7 @@ window.CATALOG = {
   {
    "id": "p89",
    "cat": "fashion",
+   "icon": "p-hat",
    "name": "Woven Straw Hat",
    "price": 32.0,
    "old": null,
@@ -1049,6 +1139,7 @@ window.CATALOG = {
   {
    "id": "p90",
    "cat": "fashion",
+   "icon": "p-jacket",
    "name": "Cropped Denim Jacket",
    "price": 79.0,
    "old": 108.33,
@@ -1060,6 +1151,7 @@ window.CATALOG = {
   {
    "id": "p91",
    "cat": "fashion",
+   "icon": "p-scarf",
    "name": "Silk Hair Scarf",
    "price": 22.0,
    "old": null,
@@ -1071,6 +1163,7 @@ window.CATALOG = {
   {
    "id": "p92",
    "cat": "fashion",
+   "icon": "p-bag",
    "name": "Mini Shoulder Bag",
    "price": 95.0,
    "old": null,
@@ -1082,6 +1175,7 @@ window.CATALOG = {
   {
    "id": "p93",
    "cat": "fashion",
+   "icon": "p-widetrousers",
    "name": "Wide-Leg Trousers",
    "price": 58.0,
    "old": null,
@@ -1093,6 +1187,7 @@ window.CATALOG = {
   {
    "id": "p94",
    "cat": "fashion",
+   "icon": "p-necklace",
    "name": "Layered Chain Necklace",
    "price": 29.0,
    "old": null,
@@ -1104,6 +1199,7 @@ window.CATALOG = {
   {
    "id": "p95",
    "cat": "fashion",
+   "icon": "p-sunglasses",
    "name": "Oversized Sunglasses",
    "price": 38.0,
    "old": 45.97,
@@ -1115,6 +1211,7 @@ window.CATALOG = {
   {
    "id": "p96",
    "cat": "fashion",
+   "icon": "p-belt",
    "name": "Leather Belt",
    "price": 44.0,
    "old": null,

@@ -1,0 +1,44 @@
+{
+    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+    "files": {
+        "ignore": ["node_modules/**", "test-results/**", "playwright-report/**"]
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "correctness": {
+                "noUnusedVariables": "off",
+                "noUndeclaredVariables": "error",
+                "noInnerDeclarations": "off"
+            },
+            "suspicious": {
+                "noAssignInExpressions": "off",
+                "noConsole": "off",
+                "noRedundantUseStrict": "off",
+                "noGlobalIsFinite": "off",
+                "noGlobalIsNan": "off"
+            },
+            "complexity": {
+                "noForEach": "off",
+                "useArrowFunction": "off",
+                "useOptionalChain": "off"
+            },
+            "style": {
+                "noVar": "off",
+                "useConst": "off",
+                "noParameterAssign": "off",
+                "useTemplate": "off",
+                "useSingleVarDeclarator": "off",
+                "useNumberNamespace": "off"
+            }
+        }
+    },
+    "javascript": {
+        "globals": ["Store", "UI", "Wish", "CATALOG"],
+        "formatter": {
+            "indentStyle": "space",
+            "indentWidth": 4
+        }
+    }
+}

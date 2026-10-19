@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /google*.html
+
+Sitemap: https://abhinavshahi27.github.io/Amazon-Clone-Website/sitemap.xml

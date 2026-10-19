@@ -8,9 +8,49 @@ window.Store = (function () {
     'use strict';
 
     var KEY = 'storefront:cart';
-    var catalog = window.CATALOG || { categories: [], products: [] };
+
+    /* ---- catalogue validation: a bad data.js edit should warn loudly,
+       not crash the renderer halfway through a grid ---- */
+    function validate(raw) {
+        raw = raw && typeof raw === 'object' ? raw : { categories: [], products: [] };
+        var cats = {};
+        (Array.isArray(raw.categories) ? raw.categories : []).forEach(function (c) {
+            if (c && typeof c.slug === 'string' && typeof c.name === 'string') { cats[c.slug] = c; }
+        });
+
+        var seen = {};
+        var dropped = [];
+        var products = (Array.isArray(raw.products) ? raw.products : []).filter(function (p) {
+            var ok = p && typeof p === 'object'
+                && typeof p.id === 'string' && !seen[p.id]
+                && cats[p.cat]
+                && typeof p.name === 'string' && p.name
+                && typeof p.price === 'number' && isFinite(p.price) && p.price >= 0
+                && typeof p.rating === 'number' && isFinite(p.rating) && p.rating >= 0 && p.rating <= 5
+                && typeof p.reviews === 'number' && isFinite(p.reviews) && p.reviews >= 0
+                && (p.hue === undefined || (typeof p.hue === 'number' && isFinite(p.hue) && p.hue >= 0 && p.hue <= 360));
+            if (!ok) { dropped.push(p && p.id ? p.id : '(missing id)'); return false; }
+            seen[p.id] = true;
+            return true;
+        });
+
+        var categories = Object.keys(cats).map(function (slug) { return cats[slug]; });
+        if (dropped.length && window.console && console.warn) {
+            console.warn('StoreFront: dropped invalid catalogue entries: ' + dropped.join(', '));
+        }
+        return { categories: categories, products: products };
+    }
+
+    var catalog = validate(window.CATALOG);
     var byId = {};
-    catalog.products.forEach(function (p) { byId[p.id] = p; });
+    catalog.products.forEach(function (p) {
+        byId[p.id] = p;
+        /* frozen: rendering code can rely on the shape never drifting at runtime */
+        Object.freeze(p);
+    });
+    Object.freeze(catalog.products);
+    catalog.categories.forEach(Object.freeze);
+    Object.freeze(catalog.categories);
 
     var items = [];        // [{ id, qty }]
     var listeners = [];

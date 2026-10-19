@@ -1,5 +1,26 @@
 /* =========================================================
-   StoreFront — design tokens
+   StoreFront — self-hosted fonts
+   Served from /assets/fonts so no request leaves the site
+   (and the CSP can lock font-src to 'self'). Both families are
+   variable fonts: one file per family covers every weight.
+   ========================================================= */
+@font-face{
+    font-family: "Plus Jakarta Sans";
+    font-style: normal;
+    font-weight: 500 800;
+    font-display: swap;
+    src: url("assets/fonts/plus-jakarta-sans-var.woff2") format("woff2");
+}
+@font-face{
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src: url("assets/fonts/inter-var.woff2") format("woff2");
+}
+
+/* =========================================================
+   design tokens
    ========================================================= */
 :root{
     --brand:      #7c5cff;
@@ -15,7 +36,7 @@
     --surface-2: #f2f1f9;
     --ink:       #161420;
     --ink-2:     #4b4866;
-    --ink-3:     #817da0;
+    --ink-3:     #6a6590;
     --line:      #e7e5f2;
     --line-2:    #d8d5ea;
 
@@ -50,7 +71,7 @@
         --surface-2: #221f33;
         --ink:       #f3f1ff;
         --ink-2:     #b8b3d4;
-        --ink-3:     #8a85a8;
+        --ink-3:     #9894b5;
         --line:      #2a2740;
         --line-2:    #3a3655;
 
@@ -73,7 +94,7 @@
     --surface-2: #221f33;
     --ink:       #f3f1ff;
     --ink-2:     #b8b3d4;
-    --ink-3:     #8a85a8;
+    --ink-3:     #9894b5;
     --line:      #2a2740;
     --line-2:    #3a3655;
 
@@ -640,9 +661,10 @@ svg:not(.sprite){
     position: relative;
     display: grid; place-items: center;
     overflow: hidden;
+    /* var() fallbacks keep tiles colourful if --h was never applied */
     background:
-        radial-gradient(120% 110% at 24% 18%, hsl(var(--h) 90% 74%), transparent 62%),
-        linear-gradient(142deg, hsl(var(--h) 72% 60%), hsl(calc(var(--h) + 42) 78% 56%));
+        radial-gradient(120% 110% at 24% 18%, hsl(var(--h, 262) 90% 74%), transparent 62%),
+        linear-gradient(142deg, hsl(var(--h, 262) 72% 60%), hsl(calc(var(--h, 262) + 42) 78% 56%));
 }
 .art-tile .art{
     width: 44%; height: 44%;
@@ -874,3 +896,157 @@ svg:not(.sprite){
     background-size: 23px 23px;
 }
 .art-tile .art{ position: relative; z-index: 1; }
+
+/* =========================================================
+   reading progress (scroll-driven where supported)
+   ========================================================= */
+.progress{
+    position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 130;
+    background: linear-gradient(90deg, var(--brand), var(--accent));
+    transform-origin: 0 50%; transform: scaleX(0);
+    pointer-events: none;
+}
+@supports (animation-timeline: scroll()){
+    .progress{ animation: progress-grow linear both; animation-timeline: scroll(root); }
+}
+@keyframes progress-grow{ to{ transform: scaleX(1); } }
+
+/* =========================================================
+   press feedback
+   ========================================================= */
+.btn:active{ transform: translateY(0) scale(.97); }
+.icon-btn:active{ transform: scale(.92); }
+
+/* =========================================================
+   view transitions — cross-fade the theme swap and morph
+   the hero image between pages. Pure enhancement: browsers
+   without support simply navigate the old way.
+   ========================================================= */
+@view-transition{ navigation: auto; }
+@media (prefers-reduced-motion: reduce){
+    @view-transition{ navigation: none; }
+}
+.hero__media img,
+.cat-hero__media img,
+.pdp__art{ view-transition-name: page-hero; }
+
+/* =========================================================
+   hero entrance + badge float
+   ========================================================= */
+@keyframes rise{ from{ opacity: 0; transform: translateY(22px); } }
+.js .hero__copy > *{ animation: rise .55s var(--ease) backwards; }
+.js .hero__copy > *:nth-child(1){ animation-delay: .04s; }
+.js .hero__copy > *:nth-child(2){ animation-delay: .10s; }
+.js .hero__copy > *:nth-child(3){ animation-delay: .16s; }
+.js .hero__copy > *:nth-child(4){ animation-delay: .22s; }
+.js .hero__copy > *:nth-child(5){ animation-delay: .28s; }
+.js .hero__media{ animation: rise .7s var(--ease) .12s backwards; }
+@keyframes float{ 50%{ transform: translateY(-7px); } }
+.hero__badge{ animation: float 6s ease-in-out infinite; }
+
+/* =========================================================
+   card tilt (JS sets --rx/--ry on fine pointers only)
+   ========================================================= */
+@media (hover: hover) and (pointer: fine){
+    .prod.is-tilt,
+    .cat.is-tilt{
+        transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-6px);
+        transition: transform .09s linear, box-shadow .25s var(--ease), border-color .25s var(--ease);
+    }
+}
+
+/* =========================================================
+   product cards — stretched title link + wishlist heart
+   ========================================================= */
+.prod{ position: relative; }
+.prod__link{ color: inherit; }
+.prod__link::after{ content: ""; position: absolute; inset: 0; }
+.prod .btn--add{ position: relative; z-index: 1; }
+.wish-btn{
+    position: absolute; top: 10px; right: 10px; z-index: 2;
+    width: 34px; height: 34px; display: grid; place-items: center;
+    border: 0; border-radius: 50%;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    color: var(--ink-2);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: var(--shadow-1);
+    transition: transform .16s var(--ease), color .16s var(--ease), background .16s var(--ease);
+}
+.wish-btn:hover{ transform: scale(1.12); color: var(--accent); }
+.wish-btn svg{ width: 17px; height: 17px; }
+.wish-btn[aria-pressed="true"]{ color: var(--accent); }
+.wish-btn[aria-pressed="true"] svg{ fill: var(--accent); stroke: none; }
+
+/* =========================================================
+   cart drawer micro-motion — new lines slide in, changed
+   quantities roll, removals collapse (JS drives the collapse)
+   ========================================================= */
+@keyframes lineIn{ from{ opacity: 0; transform: translateY(8px); } }
+.cart-line.is-in{ animation: lineIn .3s var(--ease); }
+.qty-num{ display: inline-block; }
+@keyframes qtyRoll{ from{ transform: translateY(-7px); opacity: 0; } }
+.qty-num.is-roll{ animation: qtyRoll .24s var(--ease); }
+
+/* =========================================================
+   wishlist drawer (shares the cart panel skeleton)
+   ========================================================= */
+.wl-panel{ width: min(380px, 92vw); }
+.btn--add-sm{
+    width: auto; margin-top: 6px; padding: 8px 14px;
+    font-size: .85rem;
+}
+
+/* =========================================================
+   home search — fade cards out instead of snapping away
+   (display still does the hiding; allow-discrete sequences it)
+   ========================================================= */
+.cat{ transition: opacity .22s var(--ease); }
+.cat.is-hidden{ opacity: 0; }
+
+/* =========================================================
+   product page
+   ========================================================= */
+.pdp__inner{
+    display: grid; gap: 36px; align-items: center;
+    padding-block: clamp(26px, 4vw, 48px);
+}
+.pdp__media{ position: relative; }
+.pdp__art{
+    width: 100%; aspect-ratio: 1 / 1;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-2);
+}
+.pdp__info h1{ font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+.pdp__rating{ font-size: .95rem; margin-top: 10px; }
+.pdp__price{ font-size: 1.55rem; margin-top: 12px; }
+.pdp__blurb{ color: var(--ink-2); margin-top: 14px; max-width: 52ch; }
+.pdp__actions{
+    display: flex; flex-wrap: wrap; gap: 12px;
+    align-items: center; margin-top: 26px;
+}
+.qty--lg button{ width: 38px; height: 38px; font-size: 1.05rem; }
+.qty--lg .qty-num{ min-width: 34px; font-size: 1rem; }
+.wish-btn--lg{
+    position: static; width: auto; height: 46px; padding: 0 20px;
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1.5px solid var(--line-2); border-radius: var(--radius-pill);
+    background: transparent; box-shadow: none;
+    font-family: var(--font-head); font-weight: 700; font-size: .95rem;
+    color: var(--ink);
+}
+.wish-btn--lg:hover{ transform: translateY(-2px); }
+.wish-btn--lg[aria-pressed="true"]{ color: var(--accent); border-color: var(--accent); }
+.pdp__assurances{
+    list-style: none; margin: 26px 0 0; padding: 0;
+    display: grid; gap: 10px;
+}
+.pdp__assurances li{
+    display: flex; gap: 10px; align-items: center;
+    color: var(--ink-2); font-size: .9rem;
+}
+.pdp__assurances svg{ color: var(--brand); }
+
+@media (min-width: 940px){
+    .pdp__inner{ grid-template-columns: .9fr 1.1fr; gap: 56px; }
+}

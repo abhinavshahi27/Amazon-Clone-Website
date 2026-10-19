@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# dependencies / tooling (dev-only; the site itself has none)
+node_modules/
+
+# test output
+test-results/
+playwright-report/
+blob-report/
+.playwright/
+
+# lighthouse
+.lighthouseci/
+lhci_reports/

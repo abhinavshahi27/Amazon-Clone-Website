@@ -2,18 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" content="#7c5cff">
+    <meta name="theme-color" content="#7c5cff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e0d15" media="(prefers-color-scheme: dark)">
     <meta name="description" content="Eight departments of considered, everyday things — home, furniture, tech, toys and fashion, with free delivery and 30-day returns. StoreFront is a fictional demo store built as a front-end portfolio project.">
     <title>StoreFront — Modern E-Commerce UI</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="StoreFront">
+    <meta property="og:title" content="StoreFront — Modern E-Commerce UI">
+    <meta property="og:description" content="Eight departments of considered, everyday things, with free delivery and 30-day returns. A fictional demo store built as a front-end portfolio project.">
+    <meta property="og:image" content="assets/hero-gaming.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/icons/icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+    <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="style.css">
     <!-- set before first paint so scroll-reveal only hides content when JS can show it again -->
-    <script>document.documentElement.classList.add('js');</script>
+    <script src="js/preboot.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "StoreFront",
+        "description": "A fictional demo storefront built as a front-end portfolio project."
+    }
+    </script>
 </head>
 <body>
 <svg class="sprite" aria-hidden="true" focusable="false">
@@ -31,6 +49,7 @@
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M12 5.5 18.5 12 12 18.5"/></symbol>
     <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1.1 5.9-5.3-2.9-5.3 2.9 1.1-5.9L3.5 9.7l5.9-.8z"/></symbol>
     <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.2C7.5 16.5 3.7 13.3 3.7 9.5c0-2.4 1.9-4.3 4.2-4.3 1.6 0 3.1.9 4.1 2.4 1-1.5 2.5-2.4 4.1-2.4 2.3 0 4.2 1.9 4.2 4.3 0 3.8-3.8 7-8.3 10.7z"/></symbol>
     <symbol id="g-health" viewBox="0 0 24 24"><path d="M12 3.2s6.2 6.4 6.2 10.5A6.2 6.2 0 1 1 5.8 13.7C5.8 9.6 12 3.2 12 3.2z"/></symbol>
     <symbol id="g-clothing" viewBox="0 0 24 24"><path d="M8.6 3.6 5 5.6 3.3 9l2.6 1.4L5.7 20h12.6l-.2-9.6L20.7 9 19 5.6l-3.6-2a3.4 3.4 0 0 1-6.8 0z"/></symbol>
     <symbol id="g-furniture" viewBox="0 0 24 24"><path d="M9 3.8h6l3.2 6.4H5.8z"/><path d="M12 10.2V19"/><path d="M8.4 19.8h7.2"/></symbol>
@@ -39,6 +58,102 @@
     <symbol id="g-pet" viewBox="0 0 24 24"><ellipse cx="7.4" cy="9.6" rx="1.7" ry="2.2"/><ellipse cx="10.8" cy="7.6" rx="1.7" ry="2.4"/><ellipse cx="14.4" cy="7.6" rx="1.7" ry="2.4"/><ellipse cx="17.6" cy="9.6" rx="1.7" ry="2.2"/><path d="M12.4 12.4c2.7 0 4.8 2 4.8 4.1 0 2-1.7 3-3.4 3-.9 0-1 .3-1.4.3s-.6-.3-1.5-.3c-1.7 0-3.3-1-3.3-3 0-2.1 2.1-4.1 4.8-4.1z"/></symbol>
     <symbol id="g-toys" viewBox="0 0 24 24"><rect x="4.2" y="13.2" width="6.2" height="6.2" rx="1"/><rect x="13.4" y="13.2" width="6.2" height="6.2" rx="1"/><rect x="8.8" y="5" width="6.2" height="6.2" rx="1"/></symbol>
     <symbol id="g-fashion" viewBox="0 0 24 24"><path d="M6.6 8.8h10.8l1.2 11H5.4z"/><path d="M9.4 8.8V6.6a2.6 2.6 0 0 1 5.2 0v2.2"/></symbol>
+    <symbol id="p-pumpbottle" viewBox="0 0 24 24"><path d="M9 10h6v9.2a1.8 1.8 0 0 1-1.8 1.8h-2.4A1.8 1.8 0 0 1 9 19.2z"/><path d="M12 10V7.2"/><path d="M12 4.2h4v2.2h-4"/><path d="M9 13.4h6"/></symbol>
+    <symbol id="p-toothbrush" viewBox="0 0 24 24"><rect x="9" y="2.8" width="6" height="5.2" rx="2.1"/><path d="M10.4 4.2v2.4M12 4.2v2.4M13.6 4.2v2.4"/><path d="M10.5 8h3v12.6a1.5 1.5 0 0 1-3 0z"/></symbol>
+    <symbol id="p-shaver" viewBox="0 0 24 24"><rect x="7.4" y="2.6" width="9.2" height="4.6" rx="1.5"/><path d="M9.3 4.9h5.4"/><path d="M9.5 7.2h5v11.6a2.4 2.4 0 0 1-2.4 2.4h-.2a2.4 2.4 0 0 1-2.4-2.4z"/><circle cx="12" cy="12" r=".9"/><circle cx="12" cy="15.2" r=".9"/></symbol>
+    <symbol id="p-lotion" viewBox="0 0 24 24"><path d="M10.5 3h3v3.6h-3z"/><path d="M12 6.6c2.9 0 4.6 1.9 4.6 4.8v7a1.8 1.8 0 0 1-1.8 1.8H9.2a1.8 1.8 0 0 1-1.8-1.8v-7c0-2.9 1.7-4.8 4.6-4.8z"/><path d="M9.4 12.8h5.2"/></symbol>
+    <symbol id="p-serum" viewBox="0 0 24 24"><path d="M9.5 2.8h5v3.2h-5z"/><path d="M10.8 6h2.4v3.4c0 1 .6 1.6 1.4 2.2.9.7 1.4 1.7 1.4 2.9v4.7a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-4.7c0-1.2.5-2.2 1.4-2.9.8-.6 1.4-1.2 1.4-2.2z"/><path d="M9.2 15.4h5.6"/></symbol>
+    <symbol id="p-washbag" viewBox="0 0 24 24"><path d="M4.5 8.5c0-1 .8-1.8 1.8-1.8h11.4c1 0 1.8.8 1.8 1.8v9.2c0 1.1-.9 2-2 2H6.5c-1.1 0-2-.9-2-2z"/><path d="M4.5 12.6h15"/><path d="M8.7 6.7V5.2a1.4 1.4 0 0 1 1.4-1.4h3.8a1.4 1.4 0 0 1 1.4 1.4v1.5"/><path d="M10 15.4h4"/></symbol>
+    <symbol id="p-shavegel" viewBox="0 0 24 24"><path d="M10.6 3.6h2.8v1.8h-2.8z"/><path d="M9.8 5.4h4.4v1.8H9.8z"/><path d="M8.4 7.2h7.2c.6 0 1 .4 1 1v11a1.6 1.6 0 0 1-1.6 1.6H9a1.6 1.6 0 0 1-1.6-1.6v-11c0-.6.4-1 1-1z"/><path d="M9.4 11h5.2"/></symbol>
+    <symbol id="p-sonicbrush" viewBox="0 0 24 24"><rect x="9.6" y="2.8" width="4.8" height="5" rx="1.8"/><path d="M10.9 4.2v2.2M12.4 4.2v2.2"/><path d="M10.8 7.8h2.4v12a1.2 1.2 0 0 1-2.4 0z"/><path d="M6.2 6.5c-1 1-1.6 2.3-1.6 3.7"/><path d="M17.8 6.5c1 1 1.6 2.3 1.6 3.7"/></symbol>
+    <symbol id="p-cloths" viewBox="0 0 24 24"><path d="M5 8.2c0-1 .8-1.8 1.8-1.8h10.4c1 0 1.8.8 1.8 1.8v.6H5z"/><path d="M5 12c0-1 .8-1.8 1.8-1.8h10.4c1 0 1.8.8 1.8 1.8v.6H5z"/><path d="M5 15.8c0-1 .8-1.8 1.8-1.8h10.4c1 0 1.8.8 1.8 1.8v1.4c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2z"/></symbol>
+    <symbol id="p-deo" viewBox="0 0 24 24"><path d="M9.6 3h4.8v3.6H9.6z"/><path d="M8.2 6.6h7.6c.6 0 1 .4 1 1V20a1.4 1.4 0 0 1-1.4 1.4H8.6A1.4 1.4 0 0 1 7.2 20V7.6c0-.6.4-1 1-1z"/><path d="M9.4 10.2h5.2M9.4 13h5.2"/></symbol>
+    <symbol id="p-shampoo" viewBox="0 0 24 24"><path d="M9.8 4.6h4.4v2.6H9.8z"/><path d="M11.2 7.2h1.6c1.9 0 3.4 1.5 3.4 3.4v7.6a2.2 2.2 0 0 1-2.2 2.2h-4a2.2 2.2 0 0 1-2.2-2.2v-7.6c0-1.9 1.5-3.4 3.4-3.4z"/><circle cx="7.2" cy="3.8" r=".9"/><circle cx="5.2" cy="6.4" r=".7"/><circle cx="8.4" cy="1.7" r=".6"/></symbol>
+    <symbol id="p-creamjar" viewBox="0 0 24 24"><path d="M6.4 3.6h11.2v3H6.4z"/><path d="M7.6 6.6h8.8v12.2a1.6 1.6 0 0 1-1.6 1.6H9.2a1.6 1.6 0 0 1-1.6-1.6z"/><path d="M7.6 10.4h8.8"/></symbol>
+    <symbol id="p-tshirt" viewBox="0 0 24 24"><path d="M8.6 3.8 5 5.8 3.2 9.2l2.7 1.3L6 19.6h12l.1-9.1 2.7-1.3L19 5.8l-3.6-2a3.7 3.7 0 0 1-6.8 0z"/><path d="M9.5 4.2 12 6.8l2.5-2.6"/></symbol>
+    <symbol id="p-jumper" viewBox="0 0 24 24"><path d="M9.4 4 5.6 5.9 3.8 9.3l2.7 1.3.1 8.4h10.8l.1-8.4 2.7-1.3-1.8-3.4L14.6 4a2.9 2.9 0 0 1-5.2 0z"/><path d="M6.6 15.4h10.8M6.6 18.2h10.8"/></symbol>
+    <symbol id="p-shirt" viewBox="0 0 24 24"><path d="M8.8 3.4 4.8 5.6 3 9.2l2.9 1.3L6 20.4h12l.1-9.9L21 9.2l-1.8-3.6-4-2.2a3.5 3.5 0 0 1-6.4 0z"/><path d="M12 6.9v13.5"/><path d="M9.6 3.8 12 6.9l2.4-3.1"/><circle cx="12" cy="10.2" r=".4"/><circle cx="12" cy="13.4" r=".4"/></symbol>
+    <symbol id="p-hoodie" viewBox="0 0 24 24"><path d="M8.6 3.6 4.8 5.7 3 9.2l2.8 1.3.1 8.7h12.2l.1-8.7L21 9.2l-1.8-3.5-3.8-2.1a4.2 4.2 0 0 1-7.6 0z"/><path d="M8.6 3.6c.4 2.4 1.6 3.8 3.4 3.8s3-1.4 3.4-3.8"/><path d="M10.2 7.2c.5 1 1.1 1.5 1.8 1.5s1.3-.5 1.8-1.5"/><path d="M7.8 13.2h8.4"/></symbol>
+    <symbol id="p-towel" viewBox="0 0 24 24"><path d="M3.4 4.4h17.2"/><path d="M6 4.4v14.6a1.6 1.6 0 0 0 1.6 1.6h8.8a1.6 1.6 0 0 0 1.6-1.6V4.4"/><path d="M9.4 7.4h5.2M9.4 10.2h5.2M9.4 13h5.2"/></symbol>
+    <symbol id="p-trousers" viewBox="0 0 24 24"><path d="M7.4 3h9.2l1 17.4h-4L12 10.6l-1.6 9.8h-4z"/><path d="M7.4 6.2h9.2"/></symbol>
+    <symbol id="p-socks" viewBox="0 0 24 24"><path d="M5 3h4.4v9.2c0 .8.3 1.3.9 1.8l2.4 2a2.2 2.2 0 0 1-1.4 3.8h-.8a3.6 3.6 0 0 1-2.3-.8l-3-2.7a3.1 3.1 0 0 1-1-2.3z"/><path d="M14.2 3H18v8.4"/><path d="M5 5.8h4.4M14.2 5.8H18"/></symbol>
+    <symbol id="p-blanket" viewBox="0 0 24 24"><path d="M4.4 7c0-1 .8-1.8 1.8-1.8h11.6c1 0 1.8.8 1.8 1.8v10c0 1-.8 1.8-1.8 1.8H6.2c-1 0-1.8-.8-1.8-1.8z"/><path d="M4.4 10.6h15.2"/><path d="M8 10.6v8.2M12 10.6v8.2M16 10.6v8.2"/></symbol>
+    <symbol id="p-tee3" viewBox="0 0 24 24"><path d="M8.8 4.2 5.2 6.1 3.6 9.3l2.6 1.2.1 8.2h11.4l.1-8.2 2.6-1.2-1.6-3.2-3.6-1.9a3.4 3.4 0 0 1-6.4 0z"/><path d="M6.3 14.2h11.4M6.3 16.2h11.4"/></symbol>
+    <symbol id="p-rainshell" viewBox="0 0 24 24"><path d="M8.8 4 4.9 6 3.2 9.4l2.7 1.2.1 8.8h12l.1-8.8 2.7-1.2L19.1 6l-3.9-2a3.4 3.4 0 0 1-6.4 0z"/><path d="M9.8 4.4c.3 1.8 1.1 2.7 2.2 2.7s1.9-.9 2.2-2.7"/><path d="M12 7.1v13.5"/></symbol>
+    <symbol id="p-joggers" viewBox="0 0 24 24"><path d="M7.6 4h8.8l.9 16.4h-3.7L12 11l-1.6 9.4H6.7z"/><path d="M7.6 6.8h8.8"/><path d="M10.2 6.8l1.8 2 1.8-2"/><path d="M6.9 18.2h2.6M14.5 18.2h2.6"/></symbol>
+    <symbol id="p-beanie" viewBox="0 0 24 24"><path d="M6 14.2v-2a6 6 0 0 1 12 0v2"/><circle cx="12" cy="4.6" r="1.4"/><path d="M4.6 14.2h14.8a1.2 1.2 0 0 1 1.2 1.2v1.4a1.8 1.8 0 0 1-1.8 1.8H5.2a1.8 1.8 0 0 1-1.8-1.8v-1.4a1.2 1.2 0 0 1 1.2-1.2z"/><path d="M6.6 16.8h.2M9.2 16.8h.2M11.9 16.8h.2M14.6 16.8h.2M17.2 16.8h.2"/></symbol>
+    <symbol id="p-desk" viewBox="0 0 24 24"><path d="M3.4 8.8h17.2v1.8H3.4z"/><path d="M5 10.6v9.8M19 10.6v9.8"/><rect x="12.4" y="11.6" width="5.2" height="3.4" rx=".6"/><path d="M13.2 13.3h3.6"/></symbol>
+    <symbol id="p-armchair" viewBox="0 0 24 24"><path d="M6.4 12.6V7.8a2.6 2.6 0 0 1 2.6-2.6h6a2.6 2.6 0 0 1 2.6 2.6v4.8"/><path d="M4.4 16.6v-2.2a1.8 1.8 0 0 1 3.6 0v1.2h8v-1.2a1.8 1.8 0 0 1 3.6 0v2.2a1.8 1.8 0 0 1-1.8 1.8H6.2a1.8 1.8 0 0 1-1.8-1.8z"/><path d="M5.6 18.4v1.8M18.4 18.4v1.8"/></symbol>
+    <symbol id="p-nightstand" viewBox="0 0 24 24"><rect x="5.6" y="6.2" width="12.8" height="12.6" rx="1.4"/><path d="M5.6 12.5h12.8"/><path d="M10 9.4h4M10 15.6h4"/><path d="M7.6 18.8v1.6M16.4 18.8v1.6"/></symbol>
+    <symbol id="p-shelf" viewBox="0 0 24 24"><path d="M3.4 16.8h17.2"/><path d="M3.4 16.8v3.2M20.6 16.8v3.2"/><path d="M6 16.6V9.8M9 16.6V7.4M12 16.6v-6"/><path d="M15.4 16.6l2.2-6.4"/></symbol>
+    <symbol id="p-lamp" viewBox="0 0 24 24"><path d="M8.6 4h6.8l2 4.4H6.6z"/><path d="M9.4 4 8.2 8.4M14.6 4l1.2 4.4"/><path d="M12 8.4V19"/><path d="M8.4 20.6h7.2"/></symbol>
+    <symbol id="p-bookcase" viewBox="0 0 24 24"><rect x="4.6" y="3.4" width="14.8" height="17.2" rx="1.2"/><path d="M4.6 9h14.8M4.6 14.6h14.8"/><path d="M7.4 9V6M10.4 9V7M13.4 9V6.2"/><path d="M7.4 14.6v-2.8M11 14.6v-2M14.6 14.6v-2.6"/><path d="M7.4 20.6v-2.4M13 20.6v-2.4"/></symbol>
+    <symbol id="p-sidetable" viewBox="0 0 24 24"><ellipse cx="12" cy="5.8" rx="6.8" ry="2.1"/><path d="M12 7.9v9.7"/><path d="M8.6 20.4h6.8"/><path d="M9.4 17.6 12 15l2.1 2.6"/></symbol>
+    <symbol id="p-ottoman" viewBox="0 0 24 24"><path d="M5.6 9.4h12.8a1.6 1.6 0 0 1 1.6 1.6v4.4a2.4 2.4 0 0 1-2.4 2.4H6.4A2.4 2.4 0 0 1 4 15.4V11a1.6 1.6 0 0 1 1.6-1.6z"/><path d="M4 11.6h16"/><path d="M6.8 17.8v1.8M17.2 17.8v1.8"/><path d="M9.4 13h.2M14.4 13h.2"/></symbol>
+    <symbol id="p-diningtable" viewBox="0 0 24 24"><path d="M3.2 8.6h17.6"/><path d="M5.8 8.6 4 20.4M18.2 8.6 20 20.4"/><path d="M12 8.6v11.8"/></symbol>
+    <symbol id="p-basket" viewBox="0 0 24 24"><path d="M4.6 8.8h14.8l-1.4 9.6a2 2 0 0 1-2 1.7H8a2 2 0 0 1-2-1.7z"/><path d="M8.2 8.8V6.6a3.8 3.8 0 0 1 7.6 0v2.2"/><path d="M5.8 12.4h12.4M6.6 16h10.8"/></symbol>
+    <symbol id="p-mirror" viewBox="0 0 24 24"><rect x="7.4" y="3" width="9.2" height="14.4" rx="4.6"/><path d="M12 17.4v2.8"/><path d="M8.6 20.6h6.8"/><path d="M9.8 6.6l4.4 6.6"/></symbol>
+    <symbol id="p-coffeetable" viewBox="0 0 24 24"><ellipse cx="9.6" cy="9" rx="6.2" ry="2"/><path d="M6.4 10.2l1 5.6M12.8 10.2l-.6 3.2"/><ellipse cx="17" cy="13.4" rx="4.2" ry="1.5"/><path d="M15.2 14.5l-.6 3"/></symbol>
+    <symbol id="p-phone-flag" viewBox="0 0 24 24"><rect x="6.6" y="2.6" width="10.4" height="18.8" rx="2.4"/><path d="M10.2 18.4h3.2"/><path d="M17.6 4.2l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7z"/></symbol>
+    <symbol id="p-phone-compact" viewBox="0 0 24 24"><rect x="8.4" y="4.4" width="7.2" height="15.2" rx="1.9"/><path d="M10.9 17.4h2.2"/><path d="M5.2 10.2 6.8 11.8 5.2 13.4M18.8 10.2l-1.6 1.6 1.6 1.6"/></symbol>
+    <symbol id="p-phone-rugged" viewBox="0 0 24 24"><rect x="7" y="2.6" width="10" height="18.8" rx="2.2"/><path d="M9.8 15.6l1.8-2.4 1.5 1.9 1.3-1.5 1.7 2z"/><path d="M7 2.6 8 4M17 2.6 16 4M7 21.4 8 20M17 21.4 16 20"/></symbol>
+    <symbol id="p-phone-budget" viewBox="0 0 24 24"><rect x="6" y="2.8" width="9.6" height="18.4" rx="2.2"/><path d="M9.4 18.2h2.8"/><circle cx="17.6" cy="6.8" r="2.8"/><path d="M16.4 8 18.8 5.6"/><circle cx="16.5" cy="6.1" r=".2"/><circle cx="18.7" cy="7.5" r=".2"/></symbol>
+    <symbol id="p-phone-fold" viewBox="0 0 24 24"><path d="M4.6 5.2c0-1 .8-1.8 1.8-1.8h4.4v17.2H6.4a1.8 1.8 0 0 1-1.8-1.8z"/><path d="M19.4 5.2c0-1-.8-1.8-1.8-1.8h-4.4v17.2h4.4a1.8 1.8 0 0 0 1.8-1.8z"/><path d="M12 3.4v17.2"/></symbol>
+    <symbol id="p-phone-stylus" viewBox="0 0 24 24"><rect x="5.8" y="2.8" width="9.8" height="18.4" rx="2.2"/><path d="M9.6 18.2h2.2"/><path d="M16.8 3.4l3.8 3.8-7.4 7.4-3 .6.6-3z"/></symbol>
+    <symbol id="p-phone-camera" viewBox="0 0 24 24"><rect x="7" y="2.6" width="10" height="18.8" rx="2.4"/><circle cx="12" cy="10.6" r="3.1"/><circle cx="12" cy="10.6" r=".7"/><path d="M10.2 18.4h3.6"/></symbol>
+    <symbol id="p-phone-mini" viewBox="0 0 24 24"><rect x="9" y="5" width="6" height="14" rx="1.6"/><path d="M11 16.8h2"/><path d="M5.8 8.2 7.4 9.8M5.8 15.8 7.4 14.2M18.2 8.2l-1.6 1.6M18.2 15.8l-1.6-1.6"/></symbol>
+    <symbol id="p-phone-travel" viewBox="0 0 24 24"><rect x="5.6" y="2.8" width="10" height="18.4" rx="2.2"/><path d="M9.4 18.2h2.4"/><circle cx="18.4" cy="5.8" r="2.6"/><path d="M15.8 5.8h5.2M18.4 3.2c1 .8 1 4.4 0 5.2"/></symbol>
+    <symbol id="p-phone-battery" viewBox="0 0 24 24"><rect x="6" y="3.4" width="9.8" height="17.8" rx="2.2"/><path d="M12.4 7.6 10.4 11h1.8l-1.8 3.4"/><rect x="16.8" y="8.8" width="3.6" height="6.4" rx="1"/><path d="M17.6 8h2"/></symbol>
+    <symbol id="p-phone-student" viewBox="0 0 24 24"><path d="M7.6 6.8 12 5l4.4 1.8L12 8.6z"/><path d="M9.8 7.7v1.7c.6.5 1.4.7 2.2.7s1.6-.2 2.2-.7V7.7"/><rect x="8.6" y="11.6" width="6.8" height="9" rx="1.6"/><path d="M11.2 18.6h1.6"/></symbol>
+    <symbol id="p-phone-refurb" viewBox="0 0 24 24"><rect x="6" y="3" width="10" height="18.4" rx="2.2"/><path d="M10.4 18.4h3.2"/><path d="M17.4 4.4a3.2 3.2 0 0 1 2.4 2.8"/><path d="M20 4.8l-.2 2.4-2.4-.2"/><path d="M19.6 10.4a3.2 3.2 0 0 1-2.9 2.2"/></symbol>
+    <symbol id="p-gamepad" viewBox="0 0 24 24"><path d="M8.2 8.4h7.6a4.6 4.6 0 0 1 4.5 3.7l.7 3.4a2.3 2.3 0 0 1-4.2 1.7l-1.3-1.8H8.5l-1.3 1.8a2.3 2.3 0 0 1-4.2-1.7l.7-3.4a4.6 4.6 0 0 1 4.5-3.7z"/><path d="M7 11v2M6 12h2"/><circle cx="16" cy="11.6" r=".9"/><circle cx="17.8" cy="13.4" r=".9"/></symbol>
+    <symbol id="p-handheld" viewBox="0 0 24 24"><rect x="6.4" y="2.6" width="11.2" height="18.8" rx="2.6"/><rect x="8.6" y="5" width="6.8" height="7.4" rx="1"/><circle cx="9.6" cy="16" r="1"/><circle cx="14.4" cy="16" r="1"/><path d="M11.4 18.6h1.2"/></symbol>
+    <symbol id="p-keyboard" viewBox="0 0 24 24"><rect x="3" y="8.4" width="18" height="8.4" rx="1.6"/><path d="M5.4 10.8h1.2M8.2 10.8h1.2M11 10.8h1.2M13.8 10.8h1.2M16.6 10.8h1.2"/><path d="M6.2 13.4h1.2M9 13.4h1.2M11.8 13.4h1.2M14.6 13.4h1.2M17.4 13.4h.01"/><path d="M8.4 15.4h7.2"/></symbol>
+    <symbol id="p-mouse" viewBox="0 0 24 24"><rect x="8" y="3.4" width="8" height="17.2" rx="4"/><path d="M12 3.4v5.2"/><path d="M8 8.4h8"/><path d="M4.6 7l1.8 1M19.4 7l-1.8 1M4 12h2M18 12h2M4.6 17l1.8-1M19.4 17l-1.8-1"/></symbol>
+    <symbol id="p-vr" viewBox="0 0 24 24"><path d="M3.4 9.4c0-1.4 1.1-2.4 2.4-2.4h12.4c1.3 0 2.4 1 2.4 2.4v4.2c0 1.5-1.2 2.7-2.7 2.6l-2.9-.2a2.4 2.4 0 0 1-1.9-1.1l-.6-.9h-1.8l-.6.9a2.4 2.4 0 0 1-1.9 1.1l-2.9.2a2.6 2.6 0 0 1-2.7-2.6z"/><path d="M8.4 10.8h1.8M13.8 10.8h1.8"/><path d="M6 7.2 5.2 4.6M18 7.2l.8-2.6"/></symbol>
+    <symbol id="p-gpu" viewBox="0 0 24 24"><rect x="2.8" y="6.8" width="18.4" height="10.4" rx="1.6"/><circle cx="8.6" cy="12" r="2.6"/><circle cx="15.4" cy="12" r="2.6"/><path d="M4 17.2v2.2M20 4.8v2"/></symbol>
+    <symbol id="p-fightstick" viewBox="0 0 24 24"><rect x="3.2" y="9.4" width="17.6" height="9.6" rx="2"/><circle cx="8" cy="13.4" r="2.1"/><circle cx="15.2" cy="12.8" r=".9"/><circle cx="17.6" cy="14.8" r=".9"/><circle cx="8" cy="7.4" r="1.3"/><path d="M8 8.7v.8"/></symbol>
+    <symbol id="p-dock" viewBox="0 0 24 24"><path d="M6.4 14.6V8.8a1.8 1.8 0 0 1 3.6 0v2"/><path d="M10 10.8V6.2a2 2 0 0 1 4 0v4.6"/><path d="M14 10.4V7.8a1.8 1.8 0 0 1 3.6 0v6.8"/><rect x="4.6" y="14.6" width="14.8" height="4.4" rx="1.2"/><path d="M12 15.6l-.8 1.4h1.4l-.8 1.4"/></symbol>
+    <symbol id="p-headset" viewBox="0 0 24 24"><path d="M4.4 13.4v-1.6a7.6 7.6 0 0 1 15.2 0v1.6"/><rect x="3.4" y="13" width="3.6" height="5.8" rx="1.6"/><rect x="17" y="13" width="3.6" height="5.8" rx="1.6"/><path d="M19 18.8c0 1.2-1.4 2-3.4 2"/></symbol>
+    <symbol id="p-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4"/><circle cx="12" cy="12" r="2.4"/><path d="M12 3.6v5.8M3.8 13.6l5.6-1.2M20.2 13.6l-5.6-1.2"/></symbol>
+    <symbol id="p-capture" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="1.6"/><circle cx="12" cy="12" r="2.8"/><circle cx="12" cy="12" r=".9"/><path d="M6 4.8v2.2M9.4 4.8v2.2"/></symbol>
+    <symbol id="p-grips" viewBox="0 0 24 24"><path d="M8.8 4.6h2.6v6.8c0 1.4-1.1 2.6-2.5 2.7-1.7.1-3.1-1.2-3.1-2.9V8.4c0-2.1 1.3-3.8 3-3.8z"/><path d="M15.2 4.6h-2.6v6.8c0 1.4 1.1 2.6 2.5 2.7 1.7.1 3.1-1.2 3.1-2.9V8.4c0-2.1-1.3-3.8-3-3.8z"/><path d="M7 8.6h1.4M15.6 8.6H17"/></symbol>
+    <symbol id="p-dogbed" viewBox="0 0 24 24"><ellipse cx="12" cy="14.6" rx="8.6" ry="4.4"/><path d="M12 14.6c-2.4-1-3.4-2.7-3-4.9.2-1.2 1.2-2 2.5-2h1c1.3 0 2.3.8 2.5 2 .4 2.2-.6 3.9-3 4.9z"/></symbol>
+    <symbol id="p-feeder" viewBox="0 0 24 24"><path d="M4.6 10.4h14.8l-1.5 5.8a4 4 0 0 1-3.9 3H10a4 4 0 0 1-3.9-3z"/><path d="M6 10.4a6 6 0 0 1 12 0"/><path d="M10 13.2h4M10.6 15.4h2.8"/></symbol>
+    <symbol id="p-ropebone" viewBox="0 0 24 24"><path d="M6.6 17.4 17.4 6.6"/><circle cx="6" cy="18" r="1.7"/><circle cx="18" cy="6" r="1.7"/><path d="M9 15l-1.6 1.6M13 11l-1.6 1.6M17 7l-1.6 1.6"/></symbol>
+    <symbol id="p-litter" viewBox="0 0 24 24"><path d="M4 10.6h16l-1.6 7.4a2.4 2.4 0 0 1-2.4 1.9H8a2.4 2.4 0 0 1-2.4-1.9z"/><path d="M4 10.6C4 8.5 5.6 7 7.6 7h8.8c2 0 3.6 1.5 3.6 3.6"/><path d="M7 7V5.4a1.6 1.6 0 0 1 1.6-1.6h6.8A1.6 1.6 0 0 1 17 5.4V7"/><path d="M9 13.4h6"/></symbol>
+    <symbol id="p-harness" viewBox="0 0 24 24"><path d="M7 4.4l5 3 5-3"/><path d="M7 4.4 5.4 12l6.6 7.6L18.6 12 17 4.4"/><path d="M9.4 9.6l2.6 2.4 2.6-2.4"/></symbol>
+    <symbol id="p-scratchpost" viewBox="0 0 24 24"><circle cx="12" cy="4.6" r="1.6"/><path d="M10.4 6.6v13.8h3.2V6.6"/><path d="M8 20.4h8"/><path d="M10.6 9.4h2.8M10.6 12h2.8M10.6 14.6h2.8M10.6 17.2h2.8"/></symbol>
+    <symbol id="p-petbrush" viewBox="0 0 24 24"><rect x="6.6" y="3.2" width="10.8" height="5.6" rx="2.4"/><path d="M8.6 8.8v1.8M10.8 8.8v1.8M13.2 8.8v1.8M15.4 8.8v1.8"/><path d="M10.8 5.6h2.4"/><path d="M12 10.6v9.8"/><path d="M9.4 20.4h5.2"/></symbol>
+    <symbol id="p-petbottle" viewBox="0 0 24 24"><path d="M10 3h4v2.6h-4z"/><path d="M9 5.6h6c1.2 0 2 1 2 2.2v10.4a2.2 2.2 0 0 1-2.2 2.2H9.2A2.2 2.2 0 0 1 7 18.2V7.8c0-1.2.8-2.2 2-2.2z"/><ellipse cx="12" cy="13" rx="1.6" ry="1.3"/><circle cx="9.9" cy="11.2" r=".6"/><circle cx="12" cy="10.5" r=".6"/><circle cx="14.1" cy="11.2" r=".6"/></symbol>
+    <symbol id="p-bowls" viewBox="0 0 24 24"><path d="M2.8 11h8.6l-1 4a3.6 3.6 0 0 1-3.4 2.6h-.4A3.6 3.6 0 0 1 3.2 15z"/><path d="M12.6 9.4h8.6l-1 4a3.6 3.6 0 0 1-3.4 2.6h-.4a3.6 3.6 0 0 1-3.4-2.6z"/><path d="M3.6 9h7M13.4 7.4h7"/></symbol>
+    <symbol id="p-treatball" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="2.4"/><path d="M4.4 9.6c2.4 1.2 4.8 1.8 7.6 1.8s5.2-.6 7.6-1.8"/><circle cx="17.8" cy="5.4" r=".8"/><circle cx="20" cy="8.6" r=".6"/></symbol>
+    <symbol id="p-petblanket" viewBox="0 0 24 24"><path d="M4.4 6.4c0-1 .8-1.8 1.8-1.8h11.6c1 0 1.8.8 1.8 1.8v10.8c0 1-.8 1.8-1.8 1.8H6.2c-1 0-1.8-.8-1.8-1.8z"/><path d="M4.4 9.8h15.2"/><ellipse cx="12" cy="14.6" rx="1.5" ry="1.2"/><circle cx="10" cy="12.9" r=".55"/><circle cx="12" cy="12.3" r=".55"/><circle cx="14" cy="12.9" r=".55"/></symbol>
+    <symbol id="p-clipper" viewBox="0 0 24 24"><path d="M9.6 13.4 6.4 10.2c-1-1-1-2.6 0-3.6s2.6-1 3.6 0l3.2 3.2"/><path d="M13.2 9.8l6.4 6.4a2.3 2.3 0 0 1-3.2 3.2l-6.4-6.4"/><circle cx="12" cy="11.6" r=".7"/></symbol>
+    <symbol id="p-bricks" viewBox="0 0 24 24"><rect x="3.6" y="13.6" width="8" height="6.4" rx="1"/><rect x="12.4" y="13.6" width="8" height="6.4" rx="1"/><rect x="8" y="6" width="8" height="6.4" rx="1"/><path d="M6 15.8h.2M9.2 15.8h.2M14.8 15.8h.2M18 15.8h.2M10.4 8.2h.2M13.6 8.2h.2"/></symbol>
+    <symbol id="p-train" viewBox="0 0 24 24"><rect x="4.4" y="9.6" width="8" height="8" rx="1.2"/><path d="M6.4 9.6V6.4h3v3.2"/><rect x="6.4" y="11.6" width="3" height="2.4"/><rect x="12.4" y="12.4" width="7" height="5.2" rx="1"/><path d="M13.6 12.4V10h3v2.4"/><circle cx="7" cy="19.6" r="1.2"/><circle cx="11" cy="19.6" r="1.2"/><circle cx="16" cy="19.6" r="1.2"/></symbol>
+    <symbol id="p-palette" viewBox="0 0 24 24"><path d="M12 3.4a8.6 8.6 0 1 0 0 17.2c1.3 0 2-.8 2-1.8 0-.9-.6-1.4-.6-2.2 0-1 .8-1.8 2-1.8h1.8a3.4 3.4 0 0 0 3.4-3.4c0-4.5-3.9-8-8.6-8z"/><circle cx="8" cy="8.6" r="1"/><circle cx="12.6" cy="6.6" r="1"/><circle cx="16.4" cy="9.4" r="1"/><circle cx="7.4" cy="13" r="1"/></symbol>
+    <symbol id="p-car" viewBox="0 0 24 24"><path d="M3.4 15.4v-2.2l1.8-3.9c.3-.7 1-1.1 1.8-1.1h8.4c.6 0 1.2.3 1.6.8l2.4 3.4 1.8.9c.6.3 1 .9 1 1.6v.5c0 .6-.4 1-1 1h-1"/><path d="M7.6 16.4h7.6"/><circle cx="6.4" cy="16.6" r="1.8"/><circle cx="16.4" cy="16.6" r="1.8"/><path d="M6.2 11.4h5"/><path d="M2.6 12.2h1.2"/></symbol>
+    <symbol id="p-teddy" viewBox="0 0 24 24"><circle cx="12" cy="9" r="4.6"/><circle cx="7" cy="5" r="1.9"/><circle cx="17" cy="5" r="1.9"/><path d="M12 16.4c-2.6 0-4.6-1.8-4.6-3.6 1.4-1.2 2.9-1.8 4.6-1.8s3.2.6 4.6 1.8c0 1.8-2 3.6-4.6 3.6z"/><path d="M8.2 14.6 6 16.2M15.8 14.6l2.2 1.6"/><circle cx="10.4" cy="8.2" r=".3"/><circle cx="13.6" cy="8.2" r=".3"/><path d="M11.2 9.9c.5.4 1.1.4 1.6 0"/></symbol>
+    <symbol id="p-robot" viewBox="0 0 24 24"><rect x="6.4" y="8.4" width="11.2" height="8.4" rx="1.8"/><circle cx="9.6" cy="12.4" r="1.1"/><circle cx="14.4" cy="12.4" r="1.1"/><path d="M9.6 15.4h4.8"/><path d="M12 8.4V6.2"/><circle cx="12" cy="4.6" r="1.1"/><path d="M6.4 11.4H4.6M17.6 11.4h1.8M9.4 16.8v1.8M14.6 16.8v1.8"/></symbol>
+    <symbol id="p-puzzle" viewBox="0 0 24 24"><path d="M8.6 4.4a1.8 1.8 0 0 1 3.6 0c0 .7-.4 1-.4 1.6h4.2v4.2c.7 0 1-.4 1.6-.4a1.8 1.8 0 0 1 0 3.6c-.7 0-1-.4-1.6-.4v4.2h-4.2c0-.7.4-1 .4-1.6a1.8 1.8 0 0 0-3.6 0c0 .7.4 1 .4 1.6H4.4v-4.2c.7 0 1 .4 1.6.4a1.8 1.8 0 0 0 0-3.6c-.7 0-1 .4-1.6.4V6h4.2c0-.7-.4-1-.4-1.6z"/></symbol>
+    <symbol id="p-kite" viewBox="0 0 24 24"><path d="M12 3.4 19.4 11 12 18.6 4.6 11z"/><path d="M12 3.4v15.2M4.6 11h14.8"/><path d="M12 18.6c-.9 1.3-2.2 1.6-2.5 3"/></symbol>
+    <symbol id="p-tiles" viewBox="0 0 24 24"><rect x="3.6" y="4.6" width="7" height="7" rx="1"/><rect x="13.4" y="4.6" width="7" height="7" rx="1"/><rect x="8.4" y="13.4" width="7" height="7" rx="1"/><path d="M7.1 8.1 8.6 6.6l1.5 1.5-1.5 1.5zM16.9 8.1l1.5-1.5 1.5 1.5-1.5 1.5z"/></symbol>
+    <symbol id="p-dino" viewBox="0 0 24 24"><path d="M5 19.6c-.4-3.8.8-6.8 3.4-8.8 1.8-1.4 4-1.8 5.8-1l2.6-2.8-.2 3.6c1.2 1.4 1.6 3.2.8 5l-2.2-.8c.4-1 .3-1.9-.2-2.7l-1.2 2.3c-2.3-.7-4.7 0-6.3 1.8-.9 1-1.5 2.2-1.7 3.4z"/><path d="M6.4 19.6h2.2M11.4 19.6h2.2"/><path d="M8.8 11.2 8.2 9.8M11.6 10.2l-.2-1.4"/></symbol>
+    <symbol id="p-flask" viewBox="0 0 24 24"><path d="M9.8 3.2h4.4"/><path d="M10.4 3.2v4.6L6 16.8a2.6 2.6 0 0 0 2.3 3.8h7.4a2.6 2.6 0 0 0 2.3-3.8l-4.4-9V3.2"/><path d="M8.4 14.6h7.2"/><circle cx="11" cy="16.6" r=".5"/><circle cx="13.4" cy="17.4" r=".4"/></symbol>
+    <symbol id="p-bike" viewBox="0 0 24 24"><circle cx="5.8" cy="16.6" r="3"/><circle cx="18.2" cy="16.6" r="3"/><path d="M5.8 16.6 9.4 8h5l3.8 8.6"/><path d="M9.4 8 8.2 5.6M14.4 8l1.4-2.4h1.6"/></symbol>
+    <symbol id="p-dress" viewBox="0 0 24 24"><path d="M9 3.6h6l-.6 3.2 2.8 12.2c-1.8.8-3.6 1.2-5.2 1.2s-3.4-.4-5.2-1.2l2.8-12.2z"/><path d="M9.4 3.6 12 7l2.6-3.4"/><path d="M9.6 16.8h4.8"/></symbol>
+    <symbol id="p-coord" viewBox="0 0 24 24"><path d="M8.8 4.4 5.2 6.2 3.6 9.4l2.6 1.2.1 8.6h11.4l.1-8.6 2.6-1.2-1.6-3.2-3.6-1.8a3.4 3.4 0 0 1-6.4 0z"/><path d="M9.6 4.6c.2 1.4 1 2.2 2.4 2.2s2.2-.8 2.4-2.2"/><path d="M3.6 17.6h16.8"/></symbol>
+    <symbol id="p-heel" viewBox="0 0 24 24"><path d="M4.6 17.4c4-.4 6.8 0 9 1.4 1.6 1 3 2.4 4.2 4.2"/><path d="M18.6 20l2.6-1.6-1.2-2.2"/><path d="M7.4 16.6 9 11l3 5"/><path d="M9 11l-2-1.2"/></symbol>
+    <symbol id="p-earring" viewBox="0 0 24 24"><circle cx="8.4" cy="6.4" r="2"/><path d="M8.4 8.4v1.2"/><circle cx="8.4" cy="11.6" r=".8"/><path d="M8.4 12.4v1.2"/><circle cx="8.4" cy="16" r="2.8"/><circle cx="16.8" cy="7.4" r="1.6"/><path d="M16.8 9v1.4"/><circle cx="16.8" cy="12.4" r="2.2"/></symbol>
+    <symbol id="p-hat" viewBox="0 0 24 24"><path d="M7 14v-1a5 5 0 0 1 10 0v1"/><path d="M2.6 16.6c1.4-1.7 2.9-2.6 4.4-2.6h10c1.5 0 3 .9 4.4 2.6.2.6-.2 1-.8 1H3.4c-.6 0-1-.4-.8-1z"/><path d="M7 14.6h10"/></symbol>
+    <symbol id="p-jacket" viewBox="0 0 24 24"><path d="M8.8 3.6 4.9 5.6 3.2 9l2.7 1.2.1 8.8h12l.1-8.8L20.8 9l-1.7-3.4-3.9-2a3.4 3.4 0 0 1-6.4 0z"/><path d="M10.6 4 12 6.8 13.4 4"/><path d="M12 6.8v12.2"/><circle cx="10.6" cy="10.2" r=".4"/><circle cx="10.6" cy="13.4" r=".4"/><circle cx="10.6" cy="16.6" r=".4"/></symbol>
+    <symbol id="p-scarf" viewBox="0 0 24 24"><path d="M4.6 10.8a7.4 7.4 0 0 1 14.8 0"/><path d="M19.4 11.6c1 1.6 1 3.6 0 5.6"/><path d="M18.2 12.4c.6 1.2.6 2.6 0 4"/></symbol>
+    <symbol id="p-bag" viewBox="0 0 24 24"><path d="M5 8h14l1 11.4a1.8 1.8 0 0 1-1.8 2H5.8A1.8 1.8 0 0 1 4 19.4z"/><path d="M8.6 8V6.4a3.4 3.4 0 0 1 6.8 0V8"/><path d="M4.6 12.6h14.8"/><circle cx="12" cy="15.4" r=".8"/></symbol>
+    <symbol id="p-widetrousers" viewBox="0 0 24 24"><path d="M7.4 3.4h9.2l2 17.2h-5.4L12 12l-1.2 8.6H5.4z"/><path d="M7.4 6h9.2"/></symbol>
+    <symbol id="p-necklace" viewBox="0 0 24 24"><path d="M5.4 4.6c.6 6 3 10.2 6.6 12.4 3.6-2.2 6-6.4 6.6-12.4"/><path d="M7.4 6.6c.8 4.6 2.4 7.6 4.6 9.4"/><circle cx="12" cy="19.4" r="2"/></symbol>
+    <symbol id="p-sunglasses" viewBox="0 0 24 24"><path d="M3 8.6h18l-1 3.2a3 3 0 0 1-2.9 2.2h-3.4a3 3 0 0 1-2.9-2.2l-.3-1.2h-1l-.3 1.2a3 3 0 0 1-2.9 2.2H5.9A3 3 0 0 1 3 11.8z"/><path d="M3 8.6 5.6 5h3M21 8.6 18.4 5h-3"/></symbol>
+    <symbol id="p-belt" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="6" rx="1.2"/><rect x="6.2" y="10.1" width="4.4" height="3.8" rx=".8"/><circle cx="8.4" cy="12" r="1.1"/><path d="M14 10.6v2.8M16.4 10.6v2.8M18.6 10.6v2.8"/></symbol>
 </svg>
 
 <a class="skip-link" href="#main">Skip to content</a>
@@ -61,7 +176,7 @@
             <a href="index.html#promise">Why us</a>
         </nav>
 
-        <form class="search" role="search" onsubmit="return false">
+        <form class="search" role="search">
             <svg class="search__icon" aria-hidden="true"><use href="#i-search"/></svg>
             <input id="searchInput" type="search" placeholder="Search departments&hellip;" aria-label="Search departments" autocomplete="off">
             <button type="button" class="search__clear" id="searchClear" aria-label="Clear search" hidden>
@@ -73,6 +188,10 @@
                 <svg class="icon-sun"><use href="#i-sun"/></svg>
                 <svg class="icon-moon"><use href="#i-moon"/></svg>
             </button>
+            <button class="icon-btn" id="wishBtn" aria-label="Wishlist, 0 items" aria-expanded="false">
+                <svg><use href="#i-heart"/></svg>
+                <span class="cart-count wish-count" id="wishCount" data-empty="true">0</span>
+            </button>
             <button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart, 0 items" aria-expanded="false">
                 <svg><use href="#i-cart"/></svg>
                 <span class="cart-count" id="cartCount" data-empty="true">0</span>
@@ -83,15 +202,6 @@
         </div>
     </div>
 </header>
-<div class="nav-scrim" id="navScrim" hidden></div>
-
-<nav class="nav-drawer" id="nav" aria-label="Primary">
-    <button class="nav__close" id="navClose" aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
-            <a href="index.html" aria-current="page">Home</a>
-            <a href="index.html#categories">Shop</a>
-            <a href="index.html#trending">Trending</a>
-            <a href="index.html#promise">Why us</a>
-</nav>
 
 <main id="main">
     <section class="hero" id="top">
@@ -117,7 +227,7 @@
             <div class="hero__media">
                 <div class="hero__blob" aria-hidden="true"></div>
                 <img src="assets/hero-gaming.jpg" alt="Two black wireless game controllers floating against a grey backdrop"
-                     width="1250" height="1200" loading="eager">
+                     width="1250" height="1200" loading="eager" fetchpriority="high" decoding="async">
                 <div class="hero__badge">
                     <strong>Gaming</strong>
                     <span>Up to 40% off</span>
@@ -147,56 +257,56 @@
 
             <div class="cat-grid" id="catGrid">
                 <a class="cat reveal" href="category.html?c=health" data-name="Health &amp; Personal Care" data-tags="health beauty care wellness skincare">
-                    <div class="cat__img"><img src="assets/health-personal-care.jpg" alt="Health & Personal Care" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__img"><img src="assets/health-personal-care.jpg" alt="Health & Personal Care" loading="lazy" decoding="async" width="600" height="450"></div>
                     <div class="cat__body">
                         <h3>Health &amp; Personal Care</h3>
                         <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
                     </div>
                 </a>
                 <a class="cat reveal" href="category.html?c=clothing" data-name="Clothing" data-tags="clothes apparel towels textiles">
-                    <div class="cat__img"><img src="assets/clothing.jpg" alt="Clothing" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__img"><img src="assets/clothing.jpg" alt="Clothing" loading="lazy" decoding="async" width="600" height="450"></div>
                     <div class="cat__body">
                         <h3>Clothing</h3>
                         <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
                     </div>
                 </a>
                 <a class="cat reveal" href="category.html?c=furniture" data-name="Furniture" data-tags="furniture home desk interior living">
-                    <div class="cat__img"><img src="assets/furniture.jpg" alt="Furniture" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__img"><img src="assets/furniture.jpg" alt="Furniture" loading="lazy" decoding="async" width="600" height="450"></div>
                     <div class="cat__body">
                         <h3>Furniture</h3>
                         <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
                     </div>
                 </a>
                 <a class="cat reveal" href="category.html?c=smartphones" data-name="Smartphones" data-tags="phones mobile tech electronics">
-                    <div class="cat__img"><img src="assets/smartphones.jpg" alt="Smartphones" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__img"><img src="assets/smartphones.jpg" alt="Smartphones" loading="lazy" decoding="async" width="600" height="450"></div>
                     <div class="cat__body">
                         <h3>Smartphones</h3>
                         <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
                     </div>
                 </a>
                 <a class="cat reveal" href="category.html?c=gaming" data-name="Gaming" data-tags="gaming console controller games tech">
-                    <div class="cat__img"><img src="assets/gaming.jpg" alt="Gaming" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__img"><img src="assets/gaming.jpg" alt="Gaming" loading="lazy" decoding="async" width="600" height="450"></div>
                     <div class="cat__body">
                         <h3>Gaming</h3>
                         <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
                     </div>
                 </a>
                 <a class="cat reveal" href="category.html?c=pet-care" data-name="Pet Care" data-tags="pets dog cat animals care">
-                    <div class="cat__img"><img src="assets/pet-care.jpg" alt="Pet Care" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__img"><img src="assets/pet-care.jpg" alt="Pet Care" loading="lazy" decoding="async" width="600" height="450"></div>
                     <div class="cat__body">
                         <h3>Pet Care</h3>
                         <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
                     </div>
                 </a>
                 <a class="cat reveal" href="category.html?c=toys" data-name="Toys" data-tags="toys kids children play games">
-                    <div class="cat__img"><img src="assets/toys.jpg" alt="Toys" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__img"><img src="assets/toys.jpg" alt="Toys" loading="lazy" decoding="async" width="600" height="450"></div>
                     <div class="cat__body">
                         <h3>Toys</h3>
                         <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
                     </div>
                 </a>
                 <a class="cat reveal" href="category.html?c=fashion" data-name="Fashion" data-tags="fashion style women trends outfits">
-                    <div class="cat__img"><img src="assets/fashion.jpg" alt="Fashion" loading="lazy" width="600" height="450"></div>
+                    <div class="cat__img"><img src="assets/fashion.jpg" alt="Fashion" loading="lazy" decoding="async" width="600" height="450"></div>
                     <div class="cat__body">
                         <h3>Fashion</h3>
                         <p>12 products <svg class="cat__go"><use href="#i-chevron"/></svg></p>
@@ -207,6 +317,19 @@
             <p class="empty" id="emptyState" hidden>
                 No departments match <strong id="emptyTerm"></strong>. <button type="button" class="link-btn" id="emptyReset">Clear the search</button>
             </p>
+        </div>
+    </section>
+
+    <section class="section" id="matches" hidden>
+        <div class="wrap">
+            <div class="section__head">
+                <div>
+                    <p class="eyebrow">Everywhere in the store</p>
+                    <h2>Products that match</h2>
+                </div>
+                <p class="section__note" id="matchCount" role="status" aria-live="polite"></p>
+            </div>
+            <div class="prod-grid" id="matchGrid"></div>
         </div>
     </section>
 
@@ -222,46 +345,50 @@
             <div class="prod-grid">
                 <article class="prod reveal">
                     <div class="prod__img">
-                        <div class="prod__art art-tile art-tile--v1" style="--h:241"><svg class="art" aria-hidden="true"><use href="#g-gaming"/></svg></div><span class="tag">-20%</span>
+                        <div class="prod__art art-tile art-tile--v1" data-h="241"><svg class="art" aria-hidden="true"><use href="#p-gamepad"/></svg></div><span class="tag">-20%</span>
+                        <button class="wish-btn" data-wish-id="p49" type="button" aria-pressed="false" aria-label="Save Pro Wireless Controller to wishlist"><svg><use href="#i-heart"/></svg></button>
                     </div>
                     <div class="prod__body">
-                        <h3>Pro Wireless Controller</h3>
+                        <h3><a class="prod__link" href="product.html?p=p49">Pro Wireless Controller</a></h3>
                         <p class="rating"><svg><use href="#i-star"/></svg><span>4.5</span> <small>(2,569)</small></p>
-                        <p class="price">$59.00 <s>$74.05</s></p>
-                        <button class="btn btn--add" data-add-id="p49">Add to cart</button>
+                        <p class="price">₹59.00 <s>₹74.05</s></p>
+                        <button class="btn btn--add" data-add-id="p49" type="button">Add to cart</button>
                     </div>
                 </article>
                 <article class="prod reveal">
                     <div class="prod__img">
-                        <div class="prod__art art-tile art-tile--v1" style="--h:195"><svg class="art" aria-hidden="true"><use href="#g-furniture"/></svg></div><span class="tag">-27%</span>
+                        <div class="prod__art art-tile art-tile--v1" data-h="195"><svg class="art" aria-hidden="true"><use href="#p-desk"/></svg></div><span class="tag">-27%</span>
+                        <button class="wish-btn" data-wish-id="p25" type="button" aria-pressed="false" aria-label="Save Minimalist Writing Desk to wishlist"><svg><use href="#i-heart"/></svg></button>
                     </div>
                     <div class="prod__body">
-                        <h3>Minimalist Writing Desk</h3>
+                        <h3><a class="prod__link" href="product.html?p=p25">Minimalist Writing Desk</a></h3>
                         <p class="rating"><svg><use href="#i-star"/></svg><span>4.1</span> <small>(899)</small></p>
-                        <p class="price">$240.00 <s>$328.78</s></p>
-                        <button class="btn btn--add" data-add-id="p25">Add to cart</button>
+                        <p class="price">₹240.00 <s>₹328.78</s></p>
+                        <button class="btn btn--add" data-add-id="p25" type="button">Add to cart</button>
                     </div>
                 </article>
                 <article class="prod reveal">
                     <div class="prod__img">
-                        <div class="prod__art art-tile art-tile--v1" style="--h:254"><svg class="art" aria-hidden="true"><use href="#g-clothing"/></svg></div>
+                        <div class="prod__art art-tile art-tile--v1" data-h="254"><svg class="art" aria-hidden="true"><use href="#p-tshirt"/></svg></div>
+                        <button class="wish-btn" data-wish-id="p13" type="button" aria-pressed="false" aria-label="Save Everyday Cotton Set to wishlist"><svg><use href="#i-heart"/></svg></button>
                     </div>
                     <div class="prod__body">
-                        <h3>Everyday Cotton Set</h3>
+                        <h3><a class="prod__link" href="product.html?p=p13">Everyday Cotton Set</a></h3>
                         <p class="rating"><svg><use href="#i-star"/></svg><span>3.8</span> <small>(172)</small></p>
-                        <p class="price">$34.00</p>
-                        <button class="btn btn--add" data-add-id="p13">Add to cart</button>
+                        <p class="price">₹34.00</p>
+                        <button class="btn btn--add" data-add-id="p13" type="button">Add to cart</button>
                     </div>
                 </article>
                 <article class="prod reveal">
                     <div class="prod__img">
-                        <div class="prod__art art-tile art-tile--v1" style="--h:287"><svg class="art" aria-hidden="true"><use href="#g-toys"/></svg></div><span class="tag">-31%</span>
+                        <div class="prod__art art-tile art-tile--v1" data-h="287"><svg class="art" aria-hidden="true"><use href="#p-bricks"/></svg></div><span class="tag">-31%</span>
+                        <button class="wish-btn" data-wish-id="p73" type="button" aria-pressed="false" aria-label="Save Build &amp; Play Bundle to wishlist"><svg><use href="#i-heart"/></svg></button>
                     </div>
                     <div class="prod__body">
-                        <h3>Build &amp; Play Bundle</h3>
+                        <h3><a class="prod__link" href="product.html?p=p73">Build &amp; Play Bundle</a></h3>
                         <p class="rating"><svg><use href="#i-star"/></svg><span>5.0</span> <small>(4,527)</small></p>
-                        <p class="price">$28.00 <s>$40.32</s></p>
-                        <button class="btn btn--add" data-add-id="p73">Add to cart</button>
+                        <p class="price">₹28.00 <s>₹40.32</s></p>
+                        <button class="btn btn--add" data-add-id="p73" type="button">Add to cart</button>
                     </div>
                 </article>
             </div>
@@ -276,7 +403,7 @@
             </div>
             <form class="newsletter__form" id="newsletterForm">
                 <label class="sr-only" for="email">Email address</label>
-                <input id="email" type="email" placeholder="you@example.com" autocomplete="off">
+                <input id="email" type="email" placeholder="you@example.com" autocomplete="off" required>
                 <button class="btn btn--primary" type="submit">Subscribe</button>
             </form>
         </div>
@@ -329,10 +456,9 @@
     </div>
 </footer>
 
-<button class="to-top" id="toTop" aria-label="Back to top" hidden><svg><use href="#i-up"/></svg></button>
-
 <script src="js/data.js"></script>
 <script src="js/store.js"></script>
+<script src="js/wishlist.js"></script>
 <script src="js/ui.js"></script>
 <script src="js/home.js"></script>
 </body>

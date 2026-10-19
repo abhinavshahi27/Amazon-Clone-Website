@@ -1,7 +1,7 @@
 /* =========================================================
    StoreFront — home page
-   Only the department search lives here; everything else on the
-   home page is static markup so it still works without JS.
+   Department search plus a live product-matches strip, driven
+   entirely from the catalogue so nothing extra is hardcoded.
    ========================================================= */
 (function () {
     'use strict';
@@ -17,8 +17,34 @@
     var emptyTerm  = $('#emptyTerm');
     var emptyReset = $('#emptyReset');
 
+    var matchSection = $('#matches');
+    var matchGrid    = $('#matchGrid');
+    var matchCount   = $('#matchCount');
+    var trending     = $('#trending');
+
     function haystack(card) {
         return ((card.dataset.name || '') + ' ' + (card.dataset.tags || '')).toLowerCase();
+    }
+
+    function renderMatches(q) {
+        if (!matchSection) { return; }
+        if (q.length < 2) {
+            matchSection.hidden = true;
+            if (trending) { trending.hidden = false; }
+            return;
+        }
+        var hits = window.CATALOG.products.filter(function (p) {
+            return p.name.toLowerCase().indexOf(q) !== -1;
+        }).slice(0, 8);
+
+        matchGrid.innerHTML = hits.map(UI.productCard).join('');
+        UI.applyHues(matchGrid);
+        UI.markVisible(matchGrid);
+        UI.syncWish(matchGrid);
+        matchCount.textContent = hits.length === 1 ? '1 product matches' : hits.length + ' products match';
+        matchSection.hidden = hits.length === 0;
+        /* while product results are on screen the trending strip is noise */
+        if (trending) { trending.hidden = hits.length > 0; }
     }
 
     function filter(term) {
@@ -41,6 +67,7 @@
                 ? shown + ' of ' + cards.length + ' departments'
                 : cards.length + ' departments';
         }
+        renderMatches(q);
     }
 
     if (input) {

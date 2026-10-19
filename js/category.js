@@ -1,8 +1,10 @@
 /* =========================================================
    StoreFront — category page
    Reads ?c=<slug>, renders that department's products, and
-   handles sorting and the on-sale filter.
-   ========================================================= */
+   handles sorting, the on-sale filter and in-department search.
+   Search, sort and filter state is mirrored into the URL so any
+   view is shareable and survives a reload.
+   ===================================================== */
 (function () {
     'use strict';
 
@@ -58,8 +60,33 @@
     var search   = $('#searchInput');
     var clearBtn = $('#searchClear');
 
+    /* ---- restore state from the URL before the first render ---- */
+    var params = new URLSearchParams(window.location.search);
+    var initialQ = params.get('q') || '';
+    if (search) { search.value = initialQ; }
+    if (clearBtn) { clearBtn.hidden = !initialQ.trim(); }
+    var initialSort = params.get('sort');
+    if (initialSort && sorters[initialSort]) { sortSel.value = initialSort; }
+    saleOnly.checked = params.get('sale') === '1';
+
+    function currentQuery() {
+        return search ? search.value.trim().toLowerCase() : '';
+    }
+
+    function syncUrl(q) {
+        var parts = ['c=' + encodeURIComponent(slug)];
+        if (q) { parts.push('q=' + encodeURIComponent(q)); }
+        if (sortSel.value !== 'featured') { parts.push('sort=' + encodeURIComponent(sortSel.value)); }
+        if (saleOnly.checked) { parts.push('sale=1'); }
+        var next = 'category.html?' + parts.join('&');
+        if (next !== window.location.pathname + window.location.search) {
+            history.replaceState(null, '', next);
+        }
+    }
+
+    var firstRender = true;
     function render() {
-        var q = search ? search.value.trim().toLowerCase() : '';
+        var q = currentQuery();
         var rows = all.slice();
 
         if (q) {
@@ -71,6 +98,18 @@
         rows.sort(sorters[sortSel.value] || sorters.featured);
 
         grid.innerHTML = rows.map(UI.productCard).join('');
+        UI.applyHues(grid);
+        UI.syncWish(grid);
+
+        /* the entrance stagger belongs to the first paint; re-renders
+           while typing swap content instantly so nothing re-animates */
+        if (firstRender) {
+            firstRender = false;
+            UI.reveal(grid);
+        } else {
+            UI.markVisible(grid);
+        }
+
         $('#shown').textContent = rows.length === all.length
             ? all.length + ' products'
             : rows.length + ' of ' + all.length + ' products';
@@ -78,16 +117,20 @@
         $('#gridEmpty').textContent = q
             ? 'No products in ' + category.name + ' match "' + q + '".'
             : 'Nothing here matches those filters.';
-        UI.reveal(grid);
+
+        syncUrl(search ? search.value.trim() : '');
     }
 
     sortSel.addEventListener('change', render);
     saleOnly.addEventListener('change', render);
 
+    /* debounce keystrokes so a fast typist does not re-render per key */
+    var deb = null;
     if (search) {
         search.addEventListener('input', function () {
             if (clearBtn) { clearBtn.hidden = !search.value.trim(); }
-            render();
+            clearTimeout(deb);
+            deb = setTimeout(render, 120);
         });
         search.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') { search.value = ''; if (clearBtn) { clearBtn.hidden = true; } render(); }
